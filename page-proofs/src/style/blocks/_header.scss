@@ -19,6 +19,7 @@
       margin: 0;
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       li {
         margin-right: 25px;
       }
@@ -35,6 +36,7 @@
       margin: 0;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     li {
       opacity: .4;
@@ -58,6 +60,7 @@
       margin: 0;
       display: flex;
       justify-content: flex-end;
+      align-items: center;
     }
     li {
       margin-left: 15px;
@@ -91,6 +94,7 @@
       margin: 0;
       display: flex;
       justify-content: center;
+      align-items: center;
       padding: 15px 0;
     }
     li {
@@ -105,8 +109,8 @@
     width: 40%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     font-size: 16px;
-    padding-top: 15px;
     span {
       background: rgba(233, 239, 243, .8);
       padding: 2px 5px;

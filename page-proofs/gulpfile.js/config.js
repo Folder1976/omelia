@@ -83,7 +83,7 @@ module.exports = {
 
     // создаем png-спайты
     pngSprite: {
-      enable: true,
+      enable: false,
       src: "src/pngSprite",
       dest: "html/img/sprite",
       imgPath: "../img/sprite",
@@ -93,8 +93,8 @@ module.exports = {
 
     // создаем svg-спайты
     svgSprite: {
-      enable: false,
-      src: "src/svgSprite",
+      enable: true,
+      src: "src/svgSprite/*.svg",
       dest: "html/img/sprite",
       svgstore: {},
     },

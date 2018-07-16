@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="/fav.ico" type="image/x-icon">
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&amp;subset=cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.min.css">
+  <link rel="stylesheet" href="/css/style.css">
 
     <meta name="description" content="Home page">
     <title>Home page</title>
@@ -89,7 +89,7 @@
 
         <div class="header__right">
           <a href="#">Корзина <span>0</span></a>
-          <a href="#"><i>ico-</i><span>2</span></a>
+          <a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg><span>2</span></a>
         </div>
       </div>
     </div>
@@ -144,17 +144,18 @@
     <div class="slider">
       <div class="item">
         <div class="product">
-          <div class="img" style="background: url(../img/slider/slide-1.jpg);"></div>
+          <div class="img" style="background: url(../img/slider/slide-1.jpg);">
+            <ul class="size">
+              <li><a href="#">xl</a></li>
+              <li><a href="#">s</a></li>
+              <li><a href="#">m</a></li>
+              <li><a href="#">l</a></li>
+              <li><a href="#">xl</a></li>
+            </ul>
+            <div class="favorite"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></div>
+          </div>
           <div class="title"><a href="#">Светр Juvia</a></div>
           <div class="price">UAH  700</div>
-          <ul class="size">
-            <li><a href="#">xl</a></li>
-            <li><a href="#">s</a></li>
-            <li><a href="#">m</a></li>
-            <li><a href="#">l</a></li>
-            <li><a href="#">xl</a></li>
-          </ul>
-          <div class="favorite">i.ico</div>
         </div>
       </div>
 
