@@ -1,0 +1,37 @@
+// библиотеки, миксины
+// @import './lib/all';
+@import './lib/_variables';
+// @import './lib/_reset';
+@import './lib/_normalize';
+@import './lib/_mixins';
+
+
+
+// font-awesome
+// @import './font-awesome/_font-awesome';
+// font-awesome 5.1
+// @import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+
+
+// bootstrap 3
+// @import './bootstrap/_bootstrap';
+
+// bootstrap 4
+@import './bootstrap4/_bootstrap';
+
+// @import './fancybox/_fancybox';
+
+
+// основные стили
+@import './sprite/sprite';
+@import './blocks/fonts';
+@import './blocks/general';
+@import './blocks/header';
+// @import './blocks/bread_crumbs';
+// @import './blocks/sidebar';
+// @import './blocks/comments';
+@import './blocks/footer';
+
+// адаптив
+@import './blocks/responsive';
+

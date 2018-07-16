@@ -1,0 +1,80 @@
+
+@import '../../../bower_components/fancybox/src/css/core';
+@import '../../../bower_components/fancybox/src/css/share';
+@import '../../../bower_components/fancybox/src/css/slideshow';
+@import '../../../bower_components/fancybox/src/css/thumbs';
+// @import '../../../bower_components/fancybox/src/css/fullscreen';
+
+.fancybox-bg { background: #737373; }
+.fancybox-is-open .fancybox-bg { opacity: .62; }
+
+
+
+.fb-modal {
+    h2 {
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 20px;
+    }
+    h4 {
+        color: #010101;
+        font-size: 16px;
+        margin-top: 35px;
+    }
+    a {
+        color: #0c559d;
+        border-bottom: 1px dashed;
+        font-size: 13px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        border: 1px solid #d9d9d9;
+        line-height: 24px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}
+
+.modal-account {
+    padding: 26px 50px;
+    max-width: 470px;
+
+    .g-btn {
+        background: #ccac8b;
+        color: #fff;
+        font-size: 18px;
+        padding: 5px 47px;
+    }
+
+    .social-login {
+        padding: 23px 0;
+        a {
+            border: none;
+            margin-right: 4px;
+            &:hover { opacity: .7; }
+        }
+    }
+}
+
+.modal-fastorder {
+    padding: 26px 20px !important;
+    max-width: 470px;
+    .g-btn {
+        font-size: 18px;
+    }
+}

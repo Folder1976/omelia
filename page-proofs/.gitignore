@@ -1,0 +1,67 @@
+# IDE Files
+.idea/*
+
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+
+## Development
+.sass-cache
+bower_components
+bower
+node_modules
+last-commit
+.svn
+#web
+old/*
+
+
+## OS (Windows, Mac...)
+Desktop.ini
+Thumbs.db
+.DS_Store
+
+
+## OpenCart
+.htaccess
+/config.php
+!index.html
+admin/config.php
+image/cache/
+system/cache/
+system/logs/
+system/storage/
+
+
+## WordPress
+web/wp-config.php
+web/wp-content/uploads/
+web/wp-content/blogs.dir/
+web/wp-content/upgrade/
+web/wp-content/backup-db/
+web/wp-content/advanced-cache.php
+web/wp-content/wp-cache-config.php
+web/wp-content/cache/*
+web/wp-content/cache/supercache/*
+web/wp-content/cache/
+web/wp-content/backups/
+web/sitemap.xml
+web/sitemap.xml.gz
+
+
+## CodeIgniter
+application/cache/*
+!application/cache/index.html
+!application/cache/.htaccess
+application/logs/*
+!application/logs/index.html
+!application/logs/.htaccess
+
+
+## other
+#
