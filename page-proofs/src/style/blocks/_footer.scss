@@ -1,7 +1,107 @@
 .subscribe {
-  background-color: #207c77;
+  padding: 60px 0 75px;
   color: #fff;
-  padding: 93px 0;
+  background-color: #207c77;
+  h2 {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .form {
+    margin-top: 50px;
+    margin-left: 65px;
+    .input {
+      width: 50%;
+      margin-right: 75px;
+      // border-color: #fff;
+      // color: #fff;
+    }
+    .svg-paper-plane {
+      position: relative;
+      margin-right: 20px;
+      vertical-align: middle;
+
+      fill: #fff;
+    }
+    .btn {
+      padding: 10px 28px 7px;
+    }
+  }
+}
+
+
+
+
+
+.footer {
+  padding: 80px 0 120px;
+
+  &-inner {
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 250px;
+  }
+
+  &__menu-1 {
+    width: 100px;
+    margin-top: -15px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        line-height: 36px;
+      }
+    }
+  }
+
+  &__menu-2 {
+    width: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -15px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        line-height: 36px;
+      }
+      &.cat {
+        width: 50%;
+        color: #070708;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 110px;
+        text-transform: uppercase;
+
+        li {
+          opacity: .4;
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      &.sub-cat {
+        width: 50%;
+        color: #070708;
+        font-size: 16px;
+        line-height: 42px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__contact {
+    width: 100%;
+    max-width: 640px;
+    border: 1px solid #c8c8c8;
+    padding: 54px 90px;
+  }
 }
 
 
@@ -9,14 +109,8 @@
 
 
 
-
-
-
-
-
-
 .footer-bottom {
-  background-color: #202020;
+  padding: 3px 0;
   color: #979797;
-  padding: 20px 0;
+  background-color: #202020;
 }

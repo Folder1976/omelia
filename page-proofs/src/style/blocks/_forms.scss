@@ -1,0 +1,22 @@
+.form {
+  &_white {
+    color: #fff;
+    border-color: #fff;
+  }
+}
+
+.input {
+  border: 0;
+  border-bottom: 2px solid;
+  background: transparent;
+  padding: 14px 0;
+  transition: all 300ms;
+  color: inherit;
+
+  &:invalid {
+    border: 0;
+    border-bottom: 2px solid #f22626 !important;
+    transition: all 300ms;
+  }
+}
+

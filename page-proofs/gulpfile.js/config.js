@@ -76,7 +76,7 @@ module.exports = {
     js: {
       enable: true,
       src: "src/js",
-      dest: "web/js",
+      dest: "html/js",
       extensions: ['js', 'jsx'],
       uglify: false
     },

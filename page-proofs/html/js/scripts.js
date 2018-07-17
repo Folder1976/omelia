@@ -26,6 +26,27 @@ $(document).mouseup(function (e){
     }
 });
 /*************************************************************/
+// owl carousel
+$(".owl-carousel.owl-theme").owlCarousel({
+    dots: false,
+    nav: true,
+    navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+    margin: 3,
+    loop: true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        1200: {
+            items: 3
+        },
+        1800: {
+            items: 5
+        }
+    }
+});
+
+/*************************************************************/
 // выпадающее меню
 // $('.js-dropdown').on('click', function(){
 //     var menu = $(this).parent().find('.dropdown-menu');
