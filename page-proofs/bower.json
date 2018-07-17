@@ -16,6 +16,7 @@
     "fancybox": "fancyBox#^3.2.5",
     "owl.carousel": "^2.2.1",
     "css-hamburgers": "^0.9.3",
-    "wow": "wowjs#^1.1.2"
+    "wow": "wowjs#^1.1.2",
+    "animate.css": "^3.5.2"
   }
 }

@@ -24,6 +24,9 @@
         margin-right: 25px;
       }
     }
+    a {
+      white-space: nowrap;
+    }
   }
 
   &__center {
@@ -99,6 +102,9 @@
     }
     li {
       margin: 0 15px;
+    }
+    a {
+      white-space: nowrap;
     }
   }
 

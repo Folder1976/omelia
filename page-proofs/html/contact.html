@@ -46,9 +46,9 @@
         </div>
 
         <div class="header-top__center">
-          <ul>
-            <li class="active"><a href="#">Жінки</a></li>
-            <li><a href="#">Чоловіки</a></li>
+          <ul class="tabs">
+            <li class="active"><a href="#header-cat-woman">Жінки</a></li>
+            <li><a href="#header-cat-man">Чоловіки</a></li>
           </ul>
         </div>
 
@@ -75,17 +75,30 @@
         </div>
 
         <div class="header__center">
-          <nav class="menu-cat">
-            <ul>
-              <li><a href="#">Новинки</a></li>
-              <li><a href="#">Одяг</a></li>
-              <li><a href="#">Взуття</a></li>
-              <li><a href="#">Аксесуари</a></li>
-              <li><a href="#">Дівчатка</a></li>
-              <li class="special"><a href="#">Акції</a></li>
-              <li><a href="#">look book</a></li>
-            </ul>
-          </nav>
+          <div class="menu-cat tabs-content">
+            <div class="tab active" id="header-cat-woman">
+              <ul>
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Дівчатка</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+                <li><a href="#">look book</a></li>
+              </ul>
+            </div>
+            <div class="tab" id="header-cat-man">
+              <ul class="tab" id="header-cat-mans">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Чоловіки</a></li>
+                <!-- <li class="special"><a href="#">Акції</a></li>
+                <li><a href="#">look book</a></li> -->
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="header__right">
@@ -155,18 +168,28 @@
           </div>
 
           <div class="footer__menu-2">
-            <ul class="cat">
-              <li class="active"><a href="#">Жінки</a></li>
-              <li><a href="#">Чоловіки</a></li>
+            <ul class="cat tabs">
+              <li class="active"><a href="#footer-cat-woman">Жінки</a></li>
+              <li><a href="#footer-cat-man">Чоловіки</a></li>
             </ul>
-            <ul class="sub-cat">
-              <li><a href="#">Новинки</a></li>
-              <li><a href="#">Одяг</a></li>
-              <li><a href="#">Взуття</a></li>
-              <li><a href="#">Аксесуари</a></li>
-              <li><a href="#">Дівчатка</a></li>
-              <li class="special"><a href="#">Акції</a></li>
-            </ul>
+            <div class="tabs-content">
+              <ul class="sub-cat tab active" id="footer-cat-woman">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Дівчатка</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+              </ul>
+              <ul class="sub-cat tab" id="footer-cat-man">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Чоловіки</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="footer__contact">

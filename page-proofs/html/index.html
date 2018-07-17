@@ -45,9 +45,9 @@
         </div>
 
         <div class="header-top__center">
-          <ul>
-            <li class="active"><a href="#">Жінки</a></li>
-            <li><a href="#">Чоловіки</a></li>
+          <ul class="tabs">
+            <li class="active"><a href="#header-cat-woman">Жінки</a></li>
+            <li><a href="#header-cat-man">Чоловіки</a></li>
           </ul>
         </div>
 
@@ -74,17 +74,30 @@
         </div>
 
         <div class="header__center">
-          <nav class="menu-cat">
-            <ul>
-              <li><a href="#">Новинки</a></li>
-              <li><a href="#">Одяг</a></li>
-              <li><a href="#">Взуття</a></li>
-              <li><a href="#">Аксесуари</a></li>
-              <li><a href="#">Дівчатка</a></li>
-              <li class="special"><a href="#">Акції</a></li>
-              <li><a href="#">look book</a></li>
-            </ul>
-          </nav>
+          <div class="menu-cat tabs-content">
+            <div class="tab active" id="header-cat-woman">
+              <ul>
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Дівчатка</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+                <li><a href="#">look book</a></li>
+              </ul>
+            </div>
+            <div class="tab" id="header-cat-man">
+              <ul class="tab" id="header-cat-mans">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Чоловіки</a></li>
+                <!-- <li class="special"><a href="#">Акції</a></li>
+                <li><a href="#">look book</a></li> -->
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="header__right">
@@ -101,6 +114,39 @@
 
 
 <main class="site-content">
+
+  <section class="section-home-slider">
+    <div class="home-slider owl-carousel owl-home-slider">
+
+      <div class="item">
+        <div class="bg-img" style="background-image: url(../img/home-slider/bg-1.jpg);"></div>
+        <div class="foto" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutRight"><img src="img/home-slider/slide-1.jpg" alt=""></div>
+        <div class="text">
+          <div class="brand" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown"><img src="img/brand/juvia.png" alt=""></div>
+          <div class="title" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown">Знижки до  50% OFF</div>
+          <div class="sub-title" data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutLeft">на колекцію весна-літо 2018</div>
+          <div class="btn-wrap" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutUp"><a href="#" class="btn">розпочати шопінг <svg class="svg-right-arrow"><use xlink:href="img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="bg-img" style="background-image: url(../img/home-slider/bg-1.jpg);"></div>
+        <div class="foto" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutRight"><img src="img/home-slider/slide-2.jpg" alt=""></div>
+        <div class="text">
+          <div class="brand" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown"><img src="img/brand/juvia.png" alt=""></div>
+          <div class="title" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown">Знижки до  60% OFF</div>
+          <div class="sub-title" data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutLeft">на колекцію весна-літо 2018</div>
+          <div class="btn-wrap" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutUp"><a href="#" class="btn">розпочати шопінг <svg class="svg-right-arrow"><use xlink:href="img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
   <section class="section-home-1">
     <div class="container">
       <div class="block__wrap">
@@ -135,117 +181,338 @@
     <div class="container">
       <h2>новинки</h2>
       <ul class="tabs">
-        <li><a href="#">P&B</a></li>
-        <li class="active"><a href="#">JUVIA</a></li>
-        <li><a href="#">must have</a></li>
+        <li><a href="#novelties-pb">P&B</a></li>
+        <li class="active"><a href="#novelties-juvia">JUVIA</a></li>
+        <li><a href="#novelties-must-have">must have</a></li>
       </ul>
     </div>
 
-
-    <div class="slider owl-carousel owl-theme">
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+    <div class="tabs-content">
+      <div id="novelties-pb" class="tab">
+        <div class="slider owl-carousel owl-theme">
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
           </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+
+      <div id="novelties-juvia" class="tab active">
+        <div class="slider owl-carousel owl-theme">
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
           </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+
+      <div id="novelties-must-have" class="tab">
+        <div class="slider owl-carousel owl-theme">
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
           </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
-          </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
-          </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
-          </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
-        </div>
-      </div>
-
     </div>
+
+
+
+
+
 
     <div class="container">
       <div class="btn-wrap">
@@ -309,116 +576,333 @@
     <div class="container">
       <h2>Хіти продаж</h2>
       <ul class="tabs">
-        <li><a href="#">P&B</a></li>
-        <li class="active"><a href="#">JUVIA</a></li>
-        <li><a href="#">must have</a></li>
+        <li><a href="#hit-sale-pb">P&B</a></li>
+        <li class="active"><a href="#hit-sale-juvia">JUVIA</a></li>
+        <li><a href="#hit-sale-must-have">must have</a></li>
       </ul>
     </div>
 
 
-    <div class="slider owl-carousel owl-theme">
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+    <div class="tabs-content">
+      <div id="hit-sale-pb" class="tab">
+        <div class="slider owl-carousel owl-theme">
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
           </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+
+      <div id="hit-sale-juvia" class="tab active">
+        <div class="slider owl-carousel owl-theme">
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
           </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+
+      <div id="hit-sale-must-have" class="tab">
+        <div class="slider owl-carousel owl-theme">
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
           </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-2.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-3.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="product">
+              <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
+                <ul class="size">
+                  <li><a href="#">xl</a></li>
+                  <li><a href="#">s</a></li>
+                  <li><a href="#">m</a></li>
+                  <li><a href="#">l</a></li>
+                  <li><a href="#">xl</a></li>
+                </ul>
+                <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+              </div>
+              <div class="title"><a href="#">Светр Juvia</a></div>
+              <div class="price">UAH  700</div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-4.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
-          </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-5.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
-          </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="product">
-          <div class="img" style="background-image: url(../img/slider/slide-1.jpg);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></a></div>
-          </div>
-          <div class="title"><a href="#">Светр Juvia</a></div>
-          <div class="price">UAH  700</div>
-        </div>
-      </div>
-
     </div>
 
   </section>
@@ -500,18 +984,28 @@
           </div>
 
           <div class="footer__menu-2">
-            <ul class="cat">
-              <li class="active"><a href="#">Жінки</a></li>
-              <li><a href="#">Чоловіки</a></li>
+            <ul class="cat tabs">
+              <li class="active"><a href="#footer-cat-woman">Жінки</a></li>
+              <li><a href="#footer-cat-man">Чоловіки</a></li>
             </ul>
-            <ul class="sub-cat">
-              <li><a href="#">Новинки</a></li>
-              <li><a href="#">Одяг</a></li>
-              <li><a href="#">Взуття</a></li>
-              <li><a href="#">Аксесуари</a></li>
-              <li><a href="#">Дівчатка</a></li>
-              <li class="special"><a href="#">Акції</a></li>
-            </ul>
+            <div class="tabs-content">
+              <ul class="sub-cat tab active" id="footer-cat-woman">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Дівчатка</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+              </ul>
+              <ul class="sub-cat tab" id="footer-cat-man">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Чоловіки</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+              </ul>
+            </div>
           </div>
 
           <div class="footer__contact">
