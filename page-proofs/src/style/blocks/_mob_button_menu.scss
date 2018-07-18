@@ -1,0 +1,135 @@
+//////////////////////////////////////////////////////////////////////
+// кнопка для моб. меню
+// Settings
+// ==================================================
+$hamburger-padding-x: 0px !default;
+$hamburger-padding-y: 0px !default;
+$hamburger-layer-width: 40px !default;
+$hamburger-layer-height: 4px !default;
+$hamburger-layer-spacing: 6px !default;
+$hamburger-layer-color: $global_color_primary !default;
+$hamburger-layer-border-radius: 4px !default;
+$hamburger-hover-opacity: .7 !default;
+$hamburger-hover-transition-duration: .15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter: opacity(50%) !default;
+
+// Types (Remove or comment out what you don’t need)
+// ==================================================
+$hamburger-types: (
+  // 3dx,
+  // 3dx-r,
+  // 3dy,
+  // 3dy-r,
+  // 3dxy,
+  // 3dxy-r,
+  // arrow,
+  // arrow-r,
+  // arrowalt,
+  // arrowalt-r,
+  // arrowturn,
+  // arrowturn-r,
+  // boring,
+  // collapse,
+  // collapse-r,
+  // elastic,
+  // elastic-r,
+  // emphatic,
+  // emphatic-r,
+  // minus,
+  // slider,
+  // slider-r,
+  // spin,
+  // spin-r,
+  // spring,
+  // spring-r,
+  stand,
+  stand-r//,
+  // squeeze,
+  // vortex,
+  // vortex-r
+) !default;
+
+// Base Hamburger (We need this)
+// ==================================================
+@import '../../../bower_components/css-hamburgers/_sass/hamburgers/base';
+
+// Hamburger types
+// ==================================================
+// @import "types/3dx";
+// @import "types/3dx-r";
+// @import "types/3dy";
+// @import "types/3dy-r";
+// @import "types/3dxy";
+// @import "types/3dxy-r";
+// @import "types/arrow";
+// @import "types/arrow-r";
+// @import "types/arrowalt";
+// @import "types/arrowalt-r";
+// @import "types/arrowturn";
+// @import "types/arrowturn-r";
+// @import "types/boring";
+// @import "types/collapse";
+// @import "types/collapse-r";
+// @import "types/elastic";
+// @import "types/elastic-r";
+// @import "types/emphatic";
+// @import "types/emphatic-r";
+// @import "types/minus";
+// @import "types/slider";
+// @import "types/slider-r";
+// @import "types/spin";
+// @import "types/spin-r";
+// @import "types/spring";
+// @import "types/spring-r";
+@import '../../../bower_components/css-hamburgers/_sass/hamburgers/types/stand';
+@import '../../../bower_components/css-hamburgers/_sass/hamburgers/types/stand-r';
+// @import "types/squeeze";
+// @import "types/vortex";
+// @import "types/vortex-r";
+
+
+
+// стили для кнопки моб меню и стили для моб. меню
+.btn-mob-nav {
+  // text-align: right;
+  display: none;
+  // margin-top: 5px;
+  // position: absolute;
+  // right: 0;
+  // top: 0;
+}
+.header-mob-menu {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: -100vw;
+  bottom: 0;
+  background: #fff;
+  transition: all 300ms;
+  padding-left: calc((100vw - 720px) / 2);
+  padding-right: 10px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  &.open {
+    left: 0;
+  }
+}
+
+.close-btn {
+  cursor: pointer;
+  display: inline-block;
+  &:hover {
+    svg {
+      transform: rotate(359deg);
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////
+

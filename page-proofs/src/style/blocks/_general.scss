@@ -12,6 +12,26 @@ body {
   // }
   margin: 0;
   padding: 0;
+
+  &:before {
+    content: "";
+    background-color: #000000;
+    transition: all 300ms;
+    opacity: 0;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  &.modal-is-open,
+  &.mob-menu-is-open {
+    &:before {
+      opacity: .5;
+      z-index: 100;
+    }
+  }
 }
 
 
@@ -74,8 +94,16 @@ a {
   &:focus,
   &:active {
     text-decoration: underline;
-    transition: all 300ms;
     color: $global_color_link_hover;
+  }
+
+  &.link_blue {
+    color: #a5c4d9;
+    text-decoration: underline;
+    line-height: 1.4em;
+    &:hover {
+      color: #517187;
+    }
   }
 }
 
@@ -101,7 +129,9 @@ input:focus {
   vertical-align: middle;
 }
 
-@include sprites($spritesheet-sprites);
+
+// png-sprites
+// @include sprites($spritesheet-sprites);
 
 
 
@@ -128,6 +158,8 @@ input:focus {
 
 
 
+
+
 .btn-wrap {
   text-align: center;
 }
@@ -143,6 +175,7 @@ input:focus {
   &:hover {
     text-decoration: none;
     background: #ccc;
+    box-shadow: -28px 23px 17px 12px rgba(22, 23, 23, 0.06), -4px 3px 18px 6px rgba(22, 23, 23, 0.09);
     transition: all 300ms;
   }
 
@@ -274,6 +307,9 @@ input:focus {
   .look-book__item {
     position: relative;
     margin-top: 60px;
+
+    a { display: block; }
+
     .title {
       position: absolute;
       z-index: 1;
@@ -286,6 +322,7 @@ input:focus {
       background: #fff;
       text-transform: uppercase;
     }
+
     .img {
       position: relative;
       background-size: cover;
@@ -446,46 +483,6 @@ input:focus {
 
 
 
-/*********************************************/
-/*  SVG Sprite */
-/*********************************************/
-.svg-heart {
-  width: 17px;
-  height: 15px;
-  display: inline-block;
-  position: relative;
-  top: 3px;
-  margin-right: 3px;
-  // &:hover {
-  //   fill: #f22626;
-  // }
-}
-
-.svg-owl-right-arrow,
-.svg-owl-left-arrow {
-  width: 22px;
-  height: 25px;
-  margin: 12px 16px;
-}
-.svg-right-arrow,
-.svg-left-arrow {
-  width: 22px;
-  height: 25px;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-  margin-left: 10px;
-  margin-right: -10px;
-}
-
-.svg-paper-plane {
-  width: 32px;
-  height: 32px;
-}
-
-
-
-
 
 
 
@@ -502,6 +499,8 @@ input:focus {
 
 
 // .site-header { display: none; }
+
+// .section-home-slider { display: none; }
 // .section-home-1 { display: none; }
 // .section-novelties { display: none; }
 // .section-look-book { display: none; }

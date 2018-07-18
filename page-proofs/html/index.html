@@ -17,23 +17,16 @@
 
   <header class="site-header">
 
-    <div class="container">
-
-      <div class="btn-mob-nav">
-        <button class="js-mob-top-nav hamburger hamburger--stand" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-      </div>
-
-    </div>
-
-
-
-
     <div class="header-top__wrap">
       <div class="container header-top">
+        <div class="btn-mob-nav">
+          <button class="js-mob-top-nav hamburger hamburger--stand" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+
         <div class="header-top__left">
           <ul>
             <li><a href="#">Про нас</a></li>
@@ -62,8 +55,6 @@
 
 
 
-
-
     <div class="header__wrap">
       <div class="container header">
       
@@ -87,7 +78,7 @@
               </ul>
             </div>
             <div class="tab" id="header-cat-man">
-              <ul class="tab" id="header-cat-mans">
+              <ul">
                 <li><a href="#">Новинки</a></li>
                 <li><a href="#">Одяг</a></li>
                 <li><a href="#">Взуття</a></li>
@@ -101,14 +92,58 @@
         </div>
 
         <div class="header__right">
-          <a href="#">Корзина <span>0</span></a>
-          <a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg><span>2</span></a>
+          <a href="#"><span class="d-none d-sm-inline">Корзина </span><svg class="svg-shopping-cart d-inline d-sm-none"><use xlink:href="img/sprite/svgSprite.svg#shopping-cart"></use></svg><span class="number">0</span></a>
+          <a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg><span class="number">2</span></a>
         </div>
       </div>
     </div>
 
 
+    <div class="header-mob-menu">
+      <div class="close-btn js-mob-top-nav"><svg class="svg-close"><use xlink:href="img/sprite/svgSprite.svg#close"></use></svg></div>
+      
+      <div class="header-mob-menu__content">
+        <div class="header-mob-link">
+          <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </div>
 
+        <ul class="menu-mob-cat-tabs tabs">
+          <li class="active"><a href="#header-mob-cat-woman">Жінки</a></li>
+          <li><a href="#header-mob-cat-man">Чоловіки</a></li>
+        </ul>
+
+        <div class="menu-mob-cat tabs-content">
+          <div class="tab active" id="header-mob-cat-woman">
+            <ul class="woman">
+              <li><a href="#">Новинки</a></li>
+              <li><a href="#">Одяг</a></li>
+              <li><a href="#">Взуття</a></li>
+              <li><a href="#">Аксесуари</a></li>
+              <li><a href="#">Дівчатка</a></li>
+              <li class="special"><a href="#">Акції</a></li>
+              <li><a href="#">look book</a></li>
+            </ul>
+          </div>
+          <div class="tab" id="header-mob-cat-man">
+            <ul class="man">
+              <li><a href="#">Новинки</a></li>
+              <li><a href="#">Одяг</a></li>
+              <li><a href="#">Взуття</a></li>
+              <li><a href="#">Аксесуари</a></li>
+              <li><a href="#">Чоловіки</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
 
   </header>
 
@@ -951,11 +986,11 @@
     <div class="subscribe">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <h2>підписка на розсилку</h2>
             <p>Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!</p>
           </div>
-          <div class="col-md-8">
+          <div class="col-lg-8">
             <form action="" class="form form_white form-footer-subscribe">
               <input type="email" name="email" class="input" placeholder="Введіть свій Email">
               <button type="submit" class="btn btn_white"><svg class="svg-paper-plane"><use xlink:href="img/sprite/svgSprite.svg#paper-plane"></use></svg>підписатись</button>
@@ -1008,24 +1043,33 @@
             </div>
           </div>
 
-          <div class="footer__contact">
+          <div class="footer__contact footer-contact">
             <div class="footer-contact__col">
               <div class="footer-contact__row">
-                <a href="tel:+380971101107">+38 097 1101107</a>
-                <a href="tel:+380971101107">+38 097 1101107</a>
+                <div class="footer-contact__ico">
+                  <svg class="svg-phone"><use xlink:href="img/sprite/svgSprite.svg#phone"></use></svg>
+                </div>
+                <div class="footer-contact__text">
+                  <a href="tel:+380971101107">+38 097 1101107</a><br><a href="tel:+380971101107">+38 097 1101107</a>
+                </div>
               </div>
               <div class="footer-contact__row">
-                <a href="mailto:info@julia.com.ua">INFO@Julia.COM.UA</a>
+                <div class="footer-contact__ico">
+                  <svg class="svg-email"><use xlink:href="img/sprite/svgSprite.svg#email"></use></svg>
+                </div>
+                <div class="footer-contact__text">
+                  <a href="mailto:info@julia.com.ua">INFO@Julia.COM.UA</a>
+                </div>
               </div>
             </div>
 
             <div class="footer-contact__col">
               <div class="footer-contact__row">
-                <a href="#">Переглянути адреси магазинів</a>
+                <a href="#" class="link_blue">Переглянути адреси<br>магазинів</a>
               </div>
               <div class="footer-contact__row">
-                <a href="#"><i class="ico-fb"></i></a>
-                <a href="#"><i class="ico-instagram"></i></a>
+                <a href="#"><svg class="svg-facebook"><use xlink:href="img/sprite/svgSprite.svg#facebook"></use></svg></a>
+                <a href="#"><svg class="svg-instagram"><use xlink:href="img/sprite/svgSprite.svg#instagram"></use></svg></a>
               </div>
             </div>
           </div>

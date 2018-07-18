@@ -3,59 +3,67 @@ $(document).ready(function() {
 
 /*************************************************************/
 // открываем/закрываем моб меню
-var mobMenu = $('.header-menu');
+var mobMenu = $('.header-mob-menu');
 var hamburger = $('.btn-mob-nav .hamburger');
 function openTopNav(){
-    mobMenu.addClass('open');
-    hamburger.addClass('is-active');
+  mobMenu.addClass('open');
+  hamburger.addClass('is-active');
+  $('body').addClass('mob-menu-is-open');
 }
 function closeTopNav(){
-    mobMenu.removeClass('open');
-    hamburger.removeClass('is-active');
+  mobMenu.removeClass('open');
+  hamburger.removeClass('is-active');
+  $('body').removeClass('mob-menu-is-open');
 }
 $('.js-mob-top-nav').on('click', function(){
-    if ( mobMenu.hasClass('open') ) {
-        closeTopNav();
-    } else {
-        openTopNav();
-    }
+  if ( mobMenu.hasClass('open') ) {
+    closeTopNav();
+  } else {
+    openTopNav();
+  }
 });
 $(document).mouseup(function (e){
-    if ( $(e.target).closest('.js-mob-top-nav').length === 0 && $(e.target).closest(mobMenu).length === 0 ) {
-        closeTopNav();
-    }
+  if ( $(e.target).closest('.js-mob-top-nav').length === 0 && $(e.target).closest(mobMenu).length === 0 ) {
+    closeTopNav();
+  }
 });
 /*************************************************************/
 // owl carousel
 $(".owl-carousel.owl-theme").owlCarousel({
-    dots: false,
-    nav: true,
-    navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
-    margin: 3,
-    loop: true,
-    responsive: {
-        0: {
-            items: 1
-        },
-        1200: {
-            items: 3
-        },
-        1800: {
-            items: 5
-        }
+  dots: false,
+  nav: true,
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  margin: 3,
+  loop: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    720: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1450: {
+      items: 4,
+    },
+    1800: {
+      items: 5,
     }
+  }
 });
 
 var owlHome = $(".owl-carousel.owl-home-slider");
 
 owlHome.owlCarousel({
-    dots: false,
-    nav: true,
-    navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
-    margin: 3,
-    loop: true,
-    items: 1,
-    smartSpeed: 1000
+  dots: false,
+  nav: true,
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  margin: 3,
+  loop: true,
+  items: 1,
+  smartSpeed: 1000
 });
 
   // add animate.css class(es) to the elements to be animated
@@ -76,36 +84,36 @@ owlHome.owlCarousel({
 
 // Fired before current slide change
   owlHome.on('change.owl.carousel', function(event) {
-      var $currentItem = $('.owl-item', owlHome).eq(event.item.index);
-      var $elemsToanim = $currentItem.find("[data-animation-out]");
-      setAnimation ($elemsToanim, 'out');
+    var $currentItem = $('.owl-item', owlHome).eq(event.item.index);
+    var $elemsToanim = $currentItem.find("[data-animation-out]");
+    setAnimation ($elemsToanim, 'out');
   });
 
 // Fired after current slide has been changed
   var round = 0;
   owlHome.on('changed.owl.carousel', function(event) {
 
-      var $currentItem = $('.owl-item', owlHome).eq(event.item.index);
-      var $elemsToanim = $currentItem.find("[data-animation-in]");
-    
-      setAnimation ($elemsToanim, 'in');
+    var $currentItem = $('.owl-item', owlHome).eq(event.item.index);
+    var $elemsToanim = $currentItem.find("[data-animation-in]");
+  
+    setAnimation ($elemsToanim, 'in');
   })
   
   owlHome.on('translated.owl.carousel', function(event) {
-    console.log (event.item.index, event.page.count);
+    // console.log (event.item.index, event.page.count);
     
-      if (event.item.index == (event.page.count - 1))  {
-        if (round < 1) {
-          round++
-          console.log (round);
-        } else {
-          owlHome.trigger('stop.owl.autoplay');
-          var owlData = owl.data('owl.carousel');
-          owlData.settings.autoplay = false; //don't know if both are necessary
-          owlData.options.autoplay = false;
-          owlHome.trigger('refresh.owl.carousel');
-        }
+    if (event.item.index == (event.page.count - 1))  {
+      if (round < 1) {
+        round++
+        // console.log (round);
+      } else {
+        owlHome.trigger('stop.owl.autoplay');
+        var owlData = owl.data('owl.carousel');
+        owlData.settings.autoplay = false; //don't know if both are necessary
+        owlData.options.autoplay = false;
+        owlHome.trigger('refresh.owl.carousel');
       }
+    }
   });
 
 
@@ -113,14 +121,14 @@ owlHome.owlCarousel({
 /*************************************************************/
 // tabs
 $('.tabs').on('click', 'li a', function(e){
-    e.preventDefault();
-    $(this).closest('.tabs').find('li').removeClass('active');
-    $(this).parent().addClass('active');
+  e.preventDefault();
+  $(this).closest('.tabs').find('li').removeClass('active');
+  $(this).parent().addClass('active');
 
-    var activeTab = $(this).attr('href');
-    $(activeTab).closest('.tabs-content').find('.tab').removeClass('active');
-    $(activeTab).addClass('active');
-    // console.log($(this).attr('href'));
+  var activeTab = $(this).attr('href');
+  $(activeTab).closest('.tabs-content').find('.tab').removeClass('active');
+  $(activeTab).addClass('active');
+  // console.log($(this).attr('href'));
 });
 
 

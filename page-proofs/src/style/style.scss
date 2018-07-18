@@ -31,7 +31,8 @@
 
 
 // основные стили
-@import './sprite/sprite';
+// @import './sprite/sprite';
+@import './svg-sprite/svg-sprite';
 @import './blocks/fonts';
 @import './blocks/general';
 @import './blocks/forms';
@@ -42,5 +43,6 @@
 @import './blocks/footer';
 
 // адаптив
+@import './blocks/mob_button_menu';
 @import './blocks/responsive';
 
