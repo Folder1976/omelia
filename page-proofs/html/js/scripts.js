@@ -32,7 +32,7 @@ $(document).mouseup(function (e){
 $(".owl-carousel.owl-theme").owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: true,
   responsive: {
@@ -59,7 +59,7 @@ var owlHome = $(".owl-carousel.owl-home-slider");
 owlHome.owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: true,
   items: 1,
