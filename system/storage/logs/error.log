@@ -1,0 +1,15 @@
+2018-07-18 15:50:44 - PHP Notice:  Undefined variable: categories in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 41
+2018-07-18 15:50:44 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 41
+2018-07-18 15:50:44 - PHP Notice:  Undefined variable: categories in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 50
+2018-07-18 15:50:44 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 50
+2018-07-18 15:52:29 - PHP Notice:  Undefined variable: categories in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 41
+2018-07-18 15:52:29 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 41
+2018-07-18 15:52:29 - PHP Notice:  Undefined variable: categories in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 50
+2018-07-18 15:52:29 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 50
+2018-07-18 15:54:06 - PHP Notice:  Undefined variable: logo in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 23
+2018-07-18 15:54:06 - PHP Notice:  Undefined variable: name in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 23
+2018-07-18 15:54:06 - PHP Notice:  Undefined variable: name in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 23
+2018-07-18 15:54:06 - PHP Notice:  Undefined variable: categories in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 42
+2018-07-18 15:54:06 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 42
+2018-07-18 15:54:06 - PHP Notice:  Undefined variable: categories in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 51
+2018-07-18 15:54:06 - PHP Warning:  Invalid argument supplied for foreach() in C:\xampp_vhost\omeliya.like-it.solutions\web\catalog\view\theme\default\template\common\footer.tpl on line 51

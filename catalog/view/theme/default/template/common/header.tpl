@@ -26,12 +26,25 @@
 <meta property="og:image" content="<?php echo $logo; ?>" />
 <?php } ?>
 <meta property="og:site_name" content="<?php echo $name; ?>" />
-<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+<?php
+// этот блок в конце надо будет удалить
+/*<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+*/
+?>
+
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="catalog/view/theme/default/stylesheet/style.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/lib/owl.carousel.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/scripts.js"></script>
+
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -46,7 +59,169 @@
 <?php echo $analytic; ?>
 <?php } ?>
 </head>
-<body class="<?php echo $class; ?>">
+<body class="site <?php echo $class; ?>">
+  <header class="site-header">
+
+    <div class="header-top__wrap">
+      <div class="container header-top">
+        <div class="btn-mob-nav">
+          <button class="js-mob-top-nav hamburger hamburger--stand" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+
+        <div class="header-top__left">
+          <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </div>
+
+        <div class="header-top__center">
+          <ul class="tabs">
+            <?php
+            $n = 0;
+            foreach ($categories as $category) {
+              $n++;
+            ?>
+              <li <?php if ( $n == 1 ) { echo ' class="active"'; } ?>><a href="#header-cat-<?php echo $n; ?>"><?php echo $category['name']; ?></a></li>
+            <?php } ?>
+          </ul>
+        </div>
+
+        <div class="header-top__right">
+          <ul>
+            <li><a href="<?php echo $account; ?>">Вхід</a><span>|</span><a href="#">Ua</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="header__wrap">
+      <div class="container header">
+      
+        <?php if ($logo) { ?>
+        <div class="header__left">
+          <div class="logo">
+            <?php if ($home == $og_url) { ?>
+              <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+            <?php } else { ?>
+              <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"></a>
+            <?php } ?>
+          </div>
+        </div>
+        <?php } ?>
+        
+
+        <div class="header__center">
+          <div class="menu-cat tabs-content">
+
+            <?php
+            $n = 0;
+            foreach ($categories as $category) {
+              $n++;
+            ?>
+
+            <?php if ($category['children']) { ?>
+            <div class="tab <?php if ( $n == 1 ) { echo ' active'; } ?>" id="header-cat-<?php echo $n; ?>">
+              <ul>
+                <?php foreach ( $category['children'] as $children) { ?>
+                  <li><a href="<?php echo $children['href']; ?>"><?php echo $children['name']; ?></a></li>
+                <?php } ?>
+              </ul>
+            </div>
+            <?php } ?>
+            <?php } ?>
+
+         </div>
+        </div>
+
+
+        <div class="header__right">
+          <a href="#"><span class="d-none d-sm-inline">Корзина </span><svg class="svg-shopping-cart d-inline d-sm-none"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#shopping-cart"></use></svg><span class="number">0</span></a>
+          <a href="<?php echo $wishlist; ?>"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg><span class="number">2</span></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="header-mob-menu">
+      <div class="close-btn js-mob-top-nav"><svg class="svg-close"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#close"></use></svg></div>
+      
+      <div class="header-mob-menu__content">
+        <div class="header-mob-link">
+          <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </div>
+
+        <ul class="menu-mob-cat-tabs tabs">
+          <?php
+          $n = 0;
+          foreach ($categories as $category) {
+            $n++;
+          ?>
+          <li <?php if ( $n == 1 ) { echo ' class="active"'; } ?>><a href="#header-mob-cat-<?php echo $n; ?>"><?php echo $category['name']; ?></a></li>
+          <?php } ?>
+        </ul>
+
+
+        <div class="menu-mob-cat tabs-content">
+
+          <?php
+          $n = 0;
+          foreach ($categories as $category) {
+            $n++;
+          ?>
+
+          <?php if ($category['children']) { ?>
+          <div class="tab <?php if ( $n == 1 ) { echo ' active'; } ?>" id="header-mob-cat-<?php echo $n; ?>" id="header-mob-cat-<?php echo $n; ?>">
+            <ul>
+              <?php foreach ( $category['children'] as $children) { ?>
+                <li><a href="<?php echo $children['href']; ?>"><?php echo $children['name']; ?></a></li>
+              <?php } ?>
+            </ul>
+          </div>
+          <?php } ?>
+          <?php } ?>
+
+        </div>
+      </div>
+
+      
+    </div>
+
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display: none;">
 <nav id="top">
   <div class="container">
     <?php echo $currency; ?>
@@ -129,3 +304,6 @@
   </nav>
 </div>
 <?php } ?>
+
+
+</div>
