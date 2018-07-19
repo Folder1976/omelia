@@ -5,10 +5,10 @@ class Pagination {
 	public $limit = 20;
 	public $num_links = 8;
 	public $url = '';
-	public $text_first = '|&lt;';
-	public $text_last = '&gt;|';
-	public $text_next = '&gt;';
-	public $text_prev = '&lt;';
+	public $text_first = '';
+	public $text_last = '';
+	public $text_next = '<svg class="svg-angle-arrow-right"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#angle-arrow-right"></use></svg>';
+	public $text_prev = '<svg class="svg-angle-arrow-left"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#angle-arrow-right"></use></svg>';
 
 	public function render() {
 		$total = $this->total;

@@ -2,14 +2,6 @@ $(document).ready(function() {
 	// debugger;
 
 /*************************************************************/
-// Бутстраповские табы:
-//= ../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js
-
-// fancybox
-//= ../../bower_components/fancybox/dist/jquery.fancybox.min.js
-
-
-/*************************************************************/
 // Для того, чтобы проверить тег на содержание в нем атрибута
 // расширяем jQuery методом hasAttr
 $.fn.hasAttr = function(name) {
@@ -17,7 +9,16 @@ $.fn.hasAttr = function(name) {
 };
 
 /*************************************************************/
+// Бутстраповские табы:
+// = ../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js
+
+// fancybox
+// = ../../bower_components/fancybox/dist/jquery.fancybox.min.js
+
 /*************************************************************/
+// custom-select
+//= lib/jquery.custom-select.min.js
+
 /*************************************************************/
 /*************************************************************/
 /*************************************************************/

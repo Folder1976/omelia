@@ -31,7 +31,7 @@
   </section>
 
 
-
+  <?php echo $content_top; ?>
 
 
   <section class="section-home-1">

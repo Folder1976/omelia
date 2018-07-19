@@ -1,10 +1,143 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
+
+<main class="site-content">
+  <div class="content-top">
+    <div class="container">
+      <div class="content-top-inner">
+        <div>
+          <div class="bread_crumbs">
+            <ul>
+              <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+              <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+              <?php } ?>
+            </ul>
+          </div>
+          <h1><?php echo $heading_title; ?></h1>
+        </div>
+
+        <div class="view" style="display: none;">
+          <span>Відображати:</span>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /.content-top -->
+
+  <?php //echo $content_top; ?>
+  <div class="filter">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9">
+          <div class="filrer-inner">
+
+            <select class="form-control form-control-select" name="" id="">
+              <option value="0" selected="selected">бренд</option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </select>
+
+            <select class="form-control form-control-select" name="" id="">
+              <option value="0" selected="selected">колір</option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </select>
+
+            <select class="form-control form-control-select" name="" id="">
+              <option value="0" selected="selected">розмір</option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </select>
+
+            <select class="form-control form-control-select" name="" id="">
+              <option value="0" selected="selected">ціна</option>
+              <option value="1">option 1</option>
+              <option value="2">option 2</option>
+              <option value="3">option 3</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="sort-inner">
+            <select id="input-sort" class="form-control form-control-select" onchange="location = this.value;">
+              <?php foreach ($sorts as $sorts) { ?>
+              <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+              <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $text_sort; ?></option>
+              <?php } else { ?>
+              <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+              <?php } ?>
+              <?php } ?>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <?php if ($products) { ?>
+  <div class="container">
+    <div class="product-list product-list__view-4">
+      <?php foreach ($products as $product) { ?>
+        <div class="product">
+          <div class="img" style="background-image: url(<?php echo $product['thumb']; ?>);">
+            <ul class="size">
+              <li><a href="#">xl</a></li>
+              <li><a href="#">s</a></li>
+              <li><a href="#">m</a></li>
+              <li><a href="#">l</a></li>
+              <li><a href="#">xl</a></li>
+            </ul>
+            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+          </div>
+          <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
+          <div class="price">
+            <?php if (!$product['special']) { ?>
+            <?php echo $product['price']; ?>
+            <?php } else { ?>
+            <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+            <?php } ?>
+            <?php if ($product['tax']) { ?>
+            <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+            <?php } ?>
+          </div>
+        </div>
+      <?php } ?>
+      <div class="product null"></div>
+      <div class="product null"></div>
+      <div class="product null"></div>
+      <div class="product null"></div>
+      <div class="product null"></div>
+    </div>
+    <div class="pagination-wrap"><?php echo $pagination; ?></div>
+  </div>
+  <?php } ?>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="display: none;">
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -151,4 +284,10 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+
+
+
+
+
+
 <?php echo $footer; ?>
