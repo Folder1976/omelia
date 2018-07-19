@@ -103,6 +103,10 @@ module.exports = {
       enable: false,
     },
 
+    copy: {
+      enable: true,
+    },
+
     // собираем, компилируем стили
     styles: {
       enable: true,
