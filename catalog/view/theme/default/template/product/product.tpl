@@ -1,5 +1,350 @@
 <?php echo $header; ?>
-<div class="container">
+
+<pre>
+<?php
+// var_dump(get_defined_vars());
+?>
+</pre>
+<main class="site-content product-page" id="content">
+  <div class="container">
+    <div class="bread_crumbs">
+      <ul>
+        <li><a href="/">Головна</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="prod-foto">
+          <?php if ($thumb || $images) { ?>
+          <?php
+          $count_images = 0;
+          $c_img = 0;
+          ?>
+          <div class="thumbnails-wrap">
+            <ul class="thumbnails">
+              <?php if ($thumb) { $count_images++; ?>
+              <li><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" data-img="<?php echo $popup; ?>"></li>
+              <?php $c_img = 1; ?>
+              <?php } ?>
+              <?php if ($images) { $count_images =+ count($images); ?>
+                <?php foreach ($images as $image) { ?>
+                  <?php if ($c_img > 2) { ?>
+                    <li style="display: none;"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" data-img="<?php echo $image['popup']; ?>"></li>
+                  <?php } else { ?>
+                    <li><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" data-img="<?php echo $image['popup']; ?>"></li>
+                  <?php } ?>
+                <?php $c_img++; ?>
+                <?php } ?>
+              <?php } ?>
+            </ul>
+          <?php
+            if ($count_images > 3) {
+              echo '<div class="show-all-thumbnails js-show-all-thumbnails">Еще '.($count_images-2).'</div>';
+            }
+            ?>
+          </div>
+
+          <div class="detail-img" id="detail-img"></div>
+
+          <?php } ?>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="row product-detail">
+          <div class="col">
+            <h1><?php echo $heading_title; ?></h1>
+            <?php if ($price) { ?>
+            <div class="price"><?php if (!$special) { ?>
+            <?php echo $price; ?>
+            <?php } else { ?>
+            <span class="price-new"><?php echo $special; ?></span> <span class="price-old"><?php echo $price; ?></span>
+            <?php } ?>
+            <?php if ($tax) { ?>
+            <span class="price-tax"><?php echo $text_tax; ?> <?php echo $tax; ?></span>
+            <?php } ?></div>
+            <?php } ?>
+          </div>
+          <div class="col product-detail_col-right">
+            <div class="model">Артикул: <?php echo $model; ?></div>
+            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" data-original-title="В закладки"><svg class="svg-heart-big"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
+          </div>
+        </div>
+
+        <hr>
+
+        <?php if ($options) { ?>
+
+          <?php foreach ($options as $option) { ?>
+
+
+          <?php if ($option['type'] == 'radio') { ?>
+            <?php
+            if ( false ) { // усли это опция размера
+              $product_options_class = 'product-options_size';
+            }
+            if ( false ) { // усли это опция цвета
+              $product_options_class = 'product-options_color';
+            }
+
+            ?>
+            <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?> product-options <?php echo $product_options_class; ?>" >
+              <label class="control-label product-options__title"><?php echo $option['name']; ?></label>
+              <div id="input-option<?php echo $option['product_option_id']; ?>">
+
+                <?php foreach ($option['product_option_value'] as $option_value) { ?>
+                <div class="radio">
+                  <input id="option<?php echo $option['product_option_id']; ?>-<?php echo $option_value['product_option_value_id']; ?>" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" type="radio">
+                  <label for="option<?php echo $option['product_option_id']; ?>-<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?></label>
+                </div>
+                <?php } ?>
+
+              </div>
+            </div>
+          <?php } ?>
+
+
+          <?php if ($option['type'] == 'checkbox') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label"><?php echo $option['name']; ?></label>
+            <div id="input-option<?php echo $option['product_option_id']; ?>">
+              <?php foreach ($option['product_option_value'] as $option_value) { ?>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" />
+                  <?php if ($option_value['image']) { ?>
+                  <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
+                  <?php } ?>
+                  <?php echo $option_value['name']; ?>
+                  <?php if ($option_value['price']) { ?>
+                  (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+                  <?php } ?>
+                </label>
+              </div>
+              <?php } ?>
+            </div>
+          </div>
+          <?php } ?>
+
+          
+          <?php if ($option['type'] == 'select') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+            <select name="option[<?php echo $option['product_option_id']; ?>]" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control form-control-select">
+              <option value=""><?php echo $text_select; ?></option>
+              <?php foreach ($option['product_option_value'] as $option_value) { ?>
+              <option value="<?php echo $option_value['product_option_value_id']; ?>"><?php echo $option_value['name']; ?>
+              <?php if ($option_value['price']) { ?>
+              (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+              <?php } ?>
+              </option>
+              <?php } ?>
+            </select>
+          </div>
+          <?php } ?>
+
+          <?php if ($option['type'] == 'text') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+            <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
+          </div>
+          <?php } ?>
+          <?php if ($option['type'] == 'textarea') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+            <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5" placeholder="<?php echo $option['name']; ?>" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"><?php echo $option['value']; ?></textarea>
+          </div>
+          <?php } ?>
+          <?php if ($option['type'] == 'file') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label"><?php echo $option['name']; ?></label>
+            <button type="button" id="button-upload<?php echo $option['product_option_id']; ?>" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-default btn-block"><i class="fa fa-upload"></i> <?php echo $button_upload; ?></button>
+            <input type="hidden" name="option[<?php echo $option['product_option_id']; ?>]" value="" id="input-option<?php echo $option['product_option_id']; ?>" />
+          </div>
+          <?php } ?>
+          <?php if ($option['type'] == 'date') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+            <div class="input-group date">
+              <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
+              <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+              </span></div>
+          </div>
+          <?php } ?>
+          <?php if ($option['type'] == 'datetime') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+            <div class="input-group datetime">
+              <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" data-date-format="YYYY-MM-DD HH:mm" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
+              <span class="input-group-btn">
+              <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+              </span></div>
+          </div>
+          <?php } ?>
+          <?php if ($option['type'] == 'time') { ?>
+          <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+            <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+            <div class="input-group time">
+              <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" data-date-format="HH:mm" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
+              <span class="input-group-btn">
+              <button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+              </span></div>
+          </div>
+          <?php } ?>
+
+
+          <?php } ?>
+
+        <hr style="margin-top: 10px;">
+
+        <?php } ?>
+
+
+        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_black btn-buy" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">додати в кошик</button>
+
+        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_white btn-buy">придбати в 1-клік</button>
+
+        <div class="check-availability">
+          <a href="#">Перевірити наявність товару в магазині</a>
+        </div>
+
+        <div class="social-btn-wrap">
+          <a href="#"><svg class="svg-facebook"><use xlink:href="img/sprite/svgSprite.svg#facebook"></use></svg></a>
+          <a href="#"><svg class="svg-instagram"><use xlink:href="img/sprite/svgSprite.svg#instagram"></use></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container prod-description">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="title">Інформація про товар</div>
+        <div class="description"><?php echo $description; ?></div>
+      </div>
+
+      <div class="col-md-5 prod-description-2">
+        <?php if ($attribute_groups) { ?>
+        <div class="attributes">
+          <?php foreach ($attribute_groups as $attribute_group) { ?>
+            <?php
+            $attr_text = array();
+            foreach ($attribute_group['attribute'] as $attribute) {
+              $attr_text[] = $attribute['name'];
+            }
+            ?>
+
+            <p><?php echo $attribute_group['name']; ?>: <?php echo implode(', ', $attr_text); ?></p>
+          <?php } ?>
+            <br>
+            <p><a href="#" style="text-decoration: underline;">Переглянути таблицю розмірів</a></p>
+        </div>
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+
+
+
+  <?php // рекомендованные товары ?>
+  <?php if ($products) { ?>
+  <section class="section-related">
+    <h2><?php echo $text_related; ?></h2>
+    <div class="slider owl-carousel owl-theme js-owl-carousel-related">
+
+      <?php foreach ($products as $product) { ?>
+      <div class="item">
+        <div class="product">
+          <div class="img" style="background-image: url(<?php echo $product['thumb']; ?>);">
+            <ul class="size">
+              <li><a href="#">xl</a></li>
+              <li><a href="#">s</a></li>
+              <li><a href="#">m</a></li>
+              <li><a href="#">l</a></li>
+              <li><a href="#">xl</a></li>
+            </ul>
+            <div class="favorite">
+              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" class="btn-wishlist"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
+            </div>
+          </div>
+          <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
+          <div class="price">
+            <?php if (!$product['special']) { ?>
+            <?php echo $product['price']; ?>
+            <?php } else { ?>
+            <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+            <?php } ?>
+            <?php if ($product['tax']) { ?>
+            <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+      <?php } ?>
+
+    </div>
+  </section>
+  <?php } ?>
+
+</main>
+
+
+<script>
+$('.thumbnails li').on('mouseover', function() {
+  var src = $(this).find('img').data('img');
+  var alt = $(this).find('img').attr('alt');
+
+  $('.thumbnails li').removeClass('active');
+  $(this).addClass('active');
+
+  $('#detail-img').html('<img src="' + src + '" alt="' + alt + '">');
+});
+$('.thumbnails li:first').mouseover();
+
+$('.js-show-all-thumbnails').on('click', function() {
+  $(this).remove();
+  $('.thumbnails li').show();
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="display: none;">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -577,15 +922,6 @@ $('#button-review').on('click', function() {
     grecaptcha.reset();
 });
 
-$(document).ready(function() {
-	$('.thumbnails').magnificPopup({
-		type:'image',
-		delegate: 'a',
-		gallery: {
-			enabled:true
-		}
-	});
-});
 
 $(document).ready(function() {
 	var hash = window.location.hash;

@@ -3,7 +3,7 @@
 <main class="site-content">
 
   <section class="section-home-slider">
-    <div class="home-slider owl-carousel owl-home-slider">
+    <div class="home-slider owl-carousel owl-home-slider js-owl-carousel-home">
 
       <div class="item">
         <div class="bg-img" style="background-image: url(catalog/view/theme/default/img/home-slider/bg-1.jpg);"></div>
@@ -76,7 +76,7 @@
 
     <div class="tabs-content">
       <div id="novelties-pb" class="tab">
-        <div class="slider owl-carousel owl-theme">
+        <div class="slider owl-carousel owl-theme js-owl-carousel-default">
           <div class="item">
             <div class="product">
               <div class="img" style="background-image: url(catalog/view/theme/default/img/slider/slide-1.jpg);">
@@ -183,7 +183,7 @@
 
 
       <div id="novelties-juvia" class="tab active">
-        <div class="slider owl-carousel owl-theme">
+        <div class="slider owl-carousel owl-theme js-owl-carousel-default">
           <div class="item">
             <div class="product">
               <div class="img" style="background-image: url(catalog/view/theme/default/img/slider/slide-1.jpg);">
@@ -290,7 +290,7 @@
 
 
       <div id="novelties-must-have" class="tab">
-        <div class="slider owl-carousel owl-theme">
+        <div class="slider owl-carousel owl-theme js-owl-carousel-default">
           <div class="item">
             <div class="product">
               <div class="img" style="background-image: url(catalog/view/theme/default/img/slider/slide-1.jpg);">
@@ -472,7 +472,7 @@
 
     <div class="tabs-content">
       <div id="hit-sale-pb" class="tab">
-        <div class="slider owl-carousel owl-theme">
+        <div class="slider owl-carousel owl-theme js-owl-carousel-default">
           <div class="item">
             <div class="product">
               <div class="img" style="background-image: url(catalog/view/theme/default/img/slider/slide-1.jpg);">
@@ -579,7 +579,7 @@
 
 
       <div id="hit-sale-juvia" class="tab active">
-        <div class="slider owl-carousel owl-theme">
+        <div class="slider owl-carousel owl-theme js-owl-carousel-default">
           <div class="item">
             <div class="product">
               <div class="img" style="background-image: url(catalog/view/theme/default/img/slider/slide-1.jpg);">
@@ -686,7 +686,7 @@
 
 
       <div id="hit-sale-must-have" class="tab">
-        <div class="slider owl-carousel owl-theme">
+        <div class="slider owl-carousel owl-theme js-owl-carousel-default">
           <div class="item">
             <div class="product">
               <div class="img" style="background-image: url(catalog/view/theme/default/img/slider/slide-1.jpg);">

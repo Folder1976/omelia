@@ -29,7 +29,7 @@ $(document).mouseup(function (e){
 });
 /*************************************************************/
 // owl carousel
-$(".owl-carousel.owl-theme").owlCarousel({
+$(".js-owl-carousel-default").owlCarousel({
   dots: false,
   nav: true,
   navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
@@ -54,7 +54,36 @@ $(".owl-carousel.owl-theme").owlCarousel({
   }
 });
 
-var owlHome = $(".owl-carousel.owl-home-slider");
+$(".js-owl-carousel-related").owlCarousel({
+  dots: false,
+  nav: true,
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  margin: 3,
+  loop: false,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    720: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1450: {
+      items: 4,
+    },
+    1800: {
+      items: 5,
+    }
+  }
+});
+
+
+
+
+
+var owlHome = $(".js-owl-carousel-home");
 
 owlHome.owlCarousel({
   dots: false,
@@ -134,13 +163,7 @@ $('.tabs').on('click', 'li a', function(e){
 
 /*************************************************************/
 $('.form-control-select').customSelect();
-// $('#mySelect').customSelect();
 
-/*************************************************************/
-/*************************************************************/
-/*************************************************************/
-/*************************************************************/
-/*************************************************************/
-/*************************************************************/
+
 
 });

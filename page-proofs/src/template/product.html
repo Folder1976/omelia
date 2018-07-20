@@ -1,3 +1,166 @@
-<main class="site-content">
-    <h1>Product</h1>
+<main class="site-content product-page">
+  <div class="container">
+    <div class="bread_crumbs">
+      <ul>
+        <li><a href="/">Головна</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="prod-foto">
+          <div class="thumbnails-wrap">
+            <ul class="thumbnails">
+              <li><img src="img/product/product-foto-1.jpg" title="" data-img="img/product/product-foto-big-1.jpg"></li>
+              <li><img src="img/product/product-foto-2.jpg" title="" data-img="img/product/product-foto-2.jpg"></li>
+              <li><img src="img/product/product-foto-3.jpg" title="" data-img="img/product/product-foto-3.jpg"></li>
+              <li><img src="img/product/product-foto-4.jpg" title="" data-img="img/product/product-foto-4.jpg"></li>
+
+              <li style="display: none"><img src="img/product/product-foto-4.jpg" title="" data-img="img/product/product-foto-4.jpg"></li>
+              <li style="display: none"><img src="img/product/product-foto-4.jpg" title="" data-img="img/product/product-foto-4.jpg"></li>
+              <li style="display: none"><img src="img/product/product-foto-4.jpg" title="" data-img="img/product/product-foto-4.jpg"></li>
+
+            </ul>
+              <div class="show-all-thumbnails js-show-all-thumbnails">Еще 5</div>
+          </div>
+
+          <div class="detail-img" id="detail-img"></div>
+
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="row product-detail">
+          <div class="col">
+            <h1>Плаття Juvia</h1>
+            <div class="price">UAH  1 500</div>
+          </div>
+          <div class="col product-detail_col-right">
+            <div class="article">Артикул: 209350</div>
+            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add();" data-original-title="В закладки"><svg class="svg-heart-big"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg></button>
+          </div>
+        </div>
+
+        <hr>
+
+
+        <div class="form-group product-options product-options_size required">
+          <label class="control-label product-options__title">Оберіть розмір:</label>
+          <div id="input-option231">
+            <div class="radio">
+              <input id="option231-27" name="option[231]" value="27" type="radio">
+              <label for="option231-27">xs</label>
+            </div>
+            <div class="radio">
+              <input id="option231-26" name="option[231]" value="26" type="radio">
+              <label for="option231-26">s</label>
+            </div>
+            <div class="radio">
+              <input id="option231-25" name="option[231]" value="25" type="radio">
+              <label for="option231-25">m</label>
+            </div>
+            <div class="radio">
+              <input id="option231-24" name="option[231]" value="24" type="radio">
+              <label for="option231-24">l</label>
+            </div>
+            <div class="radio">
+              <input id="option231-23" name="option[231]" value="23" type="radio">
+              <label for="option231-23">xl</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group product-options product-options_color required">
+          <label class="control-label product-options__title">Оберіть колір:</label>
+          <div id="input-option231">
+            <div class="radio">
+              <input id="option232-27" name="option[232]" value="27" type="radio">
+              <label for="option232-27">xs</label>
+            </div>
+            <div class="radio">
+              <input id="option232-26" name="option[232]" value="26" type="radio">
+              <label for="option232-26">s</label>
+            </div>
+            <div class="radio">
+              <input id="option232-25" name="option[232]" value="25" type="radio">
+              <label for="option232-25">m</label>
+            </div>
+            <div class="radio">
+              <input id="option232-24" name="option[232]" value="24" type="radio">
+              <label for="option232-24">l</label>
+            </div>
+            <div class="radio">
+              <input id="option232-23" name="option[232]" value="23" type="radio">
+              <label for="option232-23">xl</label>
+            </div>
+          </div>
+        </div>
+
+        <hr style="margin-top: 10px;">
+
+        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_black btn-buy">додати в кошик</button>
+
+        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_white btn-buy">придбати в 1-клік</button>
+
+        <div class="check-availability">
+          <a href="#">Перевірити наявність товару в магазині</a>
+        </div>
+
+        <div class="social-btn-wrap">
+          <a href="#"><svg class="svg-facebook"><use xlink:href="img/sprite/svgSprite.svg#facebook"></use></svg></a>
+          <a href="#"><svg class="svg-instagram"><use xlink:href="img/sprite/svgSprite.svg#instagram"></use></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container prod-description">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="title">Інформація про товар</div>
+        <div class="description">
+          <p>Світлий та повітряний дизайн лінії A-line, виконаний з м'якої трикотажної тканини, завершується широким фланцем. Тонка структура надає витонченим акцентом і майстерно завершує спокійний стиль.</p>
+          <br>
+          <p>Зроблено в Німеччині</p>
+        </div>
+      </div>
+
+      <div class="col-md-5 prod-description-2">
+        <div class="attributes">
+          <p>Колір: сірий, рожевий, хакі, голубий, чорний</p>
+          <p>Склад: 100% бавовна</p>
+          <br>
+          <p>Довжина виробу: міді (120см)</p>
+          <p>Модель висотою 181см, носить розмір S</p>
+          <br>
+          <p><a href="#" style="text-decoration: underline;">Переглянути таблицю розмірів</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
+
+
+
+<script>
+  $('.thumbnails li').on('mouseover', function() {
+    var src = $(this).find('img').data('img');
+    var alt = $(this).find('img').attr('alt');
+
+    $('.thumbnails li').removeClass('active');
+    $(this).addClass('active');
+
+    $('#detail-img').html('<img src="' + src + '" alt="' + alt + '">');
+  });
+  $('.thumbnails li:first').mouseover();
+
+  $('.js-show-all-thumbnails').on('click', function() {
+    $(this).remove();
+    $('.thumbnails li').show();
+  });
+</script>

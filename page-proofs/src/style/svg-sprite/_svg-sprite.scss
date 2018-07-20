@@ -6,12 +6,22 @@
 .svg-heart {
   width: 17px;
   height: 15px;
-  margin-right: 3px;
+  margin-right: 15px;
   &:hover,
   a:hover & {
     fill: #f22626;
   }
 }
+
+.svg-heart-big {
+  width: 26px;
+  height: 24px;
+  &:hover,
+  a:hover & {
+    fill: #f22626;
+  }
+}
+
 
 .svg-shopping-cart {
   width: 20px;

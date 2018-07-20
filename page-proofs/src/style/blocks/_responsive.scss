@@ -9,9 +9,17 @@
 
 
 @media screen and (max-width: 1200px) {
-  
+  .detail-img {
+    margin-left: 120px;
+    padding: 10px;
+  }
+  .thumbnails-wrap {
+    margin: 20px 0 0;
+  }
+
   .filrer-inner {
     display: flex;
+
     flex-wrap: wrap;
   }
   .filrer-inner .custom-select-container,
@@ -44,6 +52,7 @@
   .section-home-1 .block {
     flex-direction: row;
     width: 100%;
+
     align-items: center;
 
     &:nth-of-type(even) {
@@ -54,7 +63,9 @@
       }
     }
 
-    &__text { padding: 0 15px; }
+    &__text {
+      padding: 0 15px;
+    }
   }
 
   .section-text .advantages {
@@ -84,15 +95,18 @@
 
 @media screen and (max-width: 991px) {
   .owl-carousel .product {
-    max-width: 350px;
     width: 100%;
+    max-width: 350px;
   }
   .owl-theme .owl-nav {
     top: 40px;
-    .owl-prev { left: 10%; }
-    .owl-next { right: 10%; }
+    .owl-prev {
+      left: 10%;
+    }
+    .owl-next {
+      right: 10%;
+    }
   }
-
 } // end max-width: 991px
 
 
@@ -100,11 +114,15 @@
 
 
 @media screen and (max-width: 767px) {
-  
+  .thumbnails {
+    max-height: 500px;
+  }
+
+
   .product-list {
     .product {
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
     }
   }
 
@@ -115,11 +133,15 @@
     padding-left: 20px;
   }
 
-  .owl-home-slider .owl-nav .owl-prev { right: 150px; }
-  .owl-home-slider .owl-nav .owl-next { right: 50px; }
+  .owl-home-slider .owl-nav .owl-prev {
+    right: 150px;
+  }
+  .owl-home-slider .owl-nav .owl-next {
+    right: 50px;
+  }
   .owl-home-slider .item .foto {
-    left: auto;
     right: 0;
+    left: auto;
   }
   .owl-home-slider .active .foto {
     right: 0;
@@ -138,8 +160,8 @@
 
   .subscribe .form .input {
     width: 100%;
-    margin-bottom: 20px;
     margin-right: 0;
+    margin-bottom: 20px;
   }
 
   .footer__logo {
@@ -151,6 +173,7 @@
     margin: 20px 0 40px;
     ul {
       display: flex;
+
       flex-wrap: wrap;
       justify-content: space-between;
     }
@@ -163,6 +186,16 @@
 
 
 @media screen and (max-width: 575px) {
+  .thumbnails-wrap {
+    width: 70px;
+  }
+  .thumbnails {
+    max-height: 400px;
+  }
+  .detail-img {
+    margin-left: 70px;
+  }
+
 
   .sort-inner .custom-select-container {
     width: 99%;
@@ -198,4 +231,3 @@
     flex-wrap: wrap;
   }
 } // end max-width: 575px
-
