@@ -5,6 +5,11 @@ class ControllerCommonFooter extends Controller {
 
 		$data['scripts'] = $this->document->getScripts('footer');
 
+		$data['language_id'] = (int)$this->config->get('config_language_id');
+		
+		$data['telephone'] = $this->config->get('config_telephone');
+		$data['email'] = $this->config->get('config_email');
+		
 		$data['text_information'] = $this->language->get('text_information');
 		$data['text_service'] = $this->language->get('text_service');
 		$data['text_extra'] = $this->language->get('text_extra');
@@ -21,18 +26,35 @@ class ControllerCommonFooter extends Controller {
 		$data['text_newsletter'] = $this->language->get('text_newsletter');
 
 		$this->load->model('catalog/information');
+		$this->load->model('catalog/category');
 
 		$data['informations'] = array();
 
+		$data['name'] = $this->config->get('config_name');
+		
+		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+			$data['logo'] = '/image/' . $this->config->get('config_logo');
+		} else {
+			$data['logo'] = '';
+		}
+		
 		foreach ($this->model_catalog_information->getInformations() as $result) {
 			if ($result['bottom']) {
-				$data['informations'][] = array(
+				$data['informations'][$result['information_id']] = array(
 					'title' => $result['title'],
 					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
 				);
 			}
 		}
 
+		$data['categories'] = $this->model_catalog_category->getCategories();
+		
+		
+		foreach($data['categories'] as $index => $category){
+			$data['categories'][$index]['children'] = $this->model_catalog_category->getCategories($category['category_id']);
+		}
+		
+		
 		$data['contact'] = $this->url->link('information/contact');
 		$data['return'] = $this->url->link('account/return/add', '', true);
 		$data['sitemap'] = $this->url->link('information/sitemap');

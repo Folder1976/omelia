@@ -1,10 +1,35 @@
+  <?php
+  $lands = array(
+                'Украіна' => 'English',
+                'Мережа магазинів стильного<br>та комфортного одягу' => 'Мережа магазинів стильного<br>та комфортного одягу',
+                'Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!' => 'Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!',
+                'Переглянути адреси<br>магазинів' => 'Переглянути адреси<br>магазинів',
+                'підписка на розсилку' => 'підписка на розсилку',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                '' => '',
+                );
+  $lib = array();foreach($lands as $ru => $ua){if((int)$language_id == 3){$lib[$ru] = $ru;}else{$lib[$ru] = $ua;}}
+   $lang_key = $language_id;$dir = '';if($language_id == 2){$dir = 'en';}
+    //Пример
+    //<?php echo $lib['Украинская фраза']; ? >
+    ?>
   <footer class="site-footer">
     <div class="subscribe">
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
-            <h2>підписка на розсилку</h2>
-            <p>Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!</p>
+            <h2><?php echo $lib['підписка на розсилку']; ?></h2>
+            <p><?php echo $lib['Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!']; ?></p>
           </div>
           <div class="col-lg-8">
             <form action="" class="form form_white form-footer-subscribe">
@@ -21,17 +46,17 @@
         <div class="footer-inner">
           <div class="footer__logo">
             <div><a href=""><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"></a></div>
-            <div><a href=""><img src="catalog/view/theme/default/img/logo.png" alt=""></a></div>
-            <p>Мережа магазинів стильного<br>та комфортного одягу</p>
+            <!--div><a href=""><img src="catalog/view/theme/default/img/logo.png" alt=""></a></div-->
+            <p><?php echo $lib['Мережа магазинів стильного<br>та комфортного одягу']; ?></p>
           </div>
 
           <div class="footer__menu-1">
             <ul>
-              <li><a href="#">Про нас</a></li>
-              <li><a href="#">Оплата</a></li>
-              <li><a href="#">Доставка</a></li>
-              <li><a href="#">Блог</a></li>
-              <li><a href="#">Контакти</a></li>
+              <li><a href="<?php echo $informations[4]['href'];?>"><?php echo $informations[4]['title'];?></a></li>
+              <li><a href="<?php echo $informations[7]['href'];?>"><?php echo $informations[7]['title'];?></a></li>
+              <li><a href="<?php echo $informations[6]['href'];?>"><?php echo $informations[6]['title'];?></a></li>
+              <li><a href="<?php echo $informations[8]['href'];?>"><?php echo $informations[8]['title'];?></a></li>
+              <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
             </ul>
           </div>
 
@@ -71,7 +96,7 @@
                   <svg class="svg-phone"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#phone"></use></svg>
                 </div>
                 <div class="footer-contact__text">
-                  <a href="tel:+380971101107">+38 097 1101107</a><br><a href="tel:+380971101107">+38 097 1101107</a>
+                  <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a><br><a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
                 </div>
               </div>
               <div class="footer-contact__row">
@@ -79,14 +104,14 @@
                   <svg class="svg-email"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#email"></use></svg>
                 </div>
                 <div class="footer-contact__text">
-                  <a href="mailto:info@julia.com.ua">INFO@Julia.COM.UA</a>
+                  <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
                 </div>
               </div>
             </div>
 
             <div class="footer-contact__col">
               <div class="footer-contact__row">
-                <a href="#" class="link_blue">Переглянути адреси<br>магазинів</a>
+                <a href="#" class="link_blue"><?php echo $lib['Переглянути адреси<br>магазинів']; ?></a>
               </div>
               <div class="footer-contact__row">
                 <a href="#"><svg class="svg-facebook"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#facebook"></use></svg></a>
