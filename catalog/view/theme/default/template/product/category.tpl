@@ -82,13 +82,13 @@
       <?php foreach ($products as $product) { ?>
         <div class="product">
           <div class="img" style="background-image: url(<?php echo $product['thumb']; ?>);">
-            <ul class="size">
-              <li><a href="#">xl</a></li>
-              <li><a href="#">s</a></li>
-              <li><a href="#">m</a></li>
-              <li><a href="#">l</a></li>
-              <li><a href="#">xl</a></li>
-            </ul>
+            <?php if(isset($product['options']['product_option_value']) AND count($product['options']['product_option_value']) > 0){?>
+              <ul class="size">
+                <?php foreach($product['options']['product_option_value'] as $option_value){ ?>
+                  <li><a href="<?php echo $product['href']; ?>?product_option_value_id=<?php echo $option_value['product_option_value_id'] ;?>"><?php echo $option_value['name'] ;?></a></li>
+                <?php } ?>
+              </ul>
+            <?php } ?>
             <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></a></div>
           </div>
           <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>

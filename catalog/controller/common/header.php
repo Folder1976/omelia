@@ -24,6 +24,15 @@ class ControllerCommonHeader extends Controller {
 			$this->document->addLink($server . 'image/' . $this->config->get('config_icon'), 'icon');
 		}
 
+		foreach ($this->model_catalog_information->getInformations() as $result) {
+			if ($result['bottom']) {
+				$data['informations'][$result['information_id']] = array(
+					'title' => $result['title'],
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				);
+			}
+		}
+		
 		$data['title'] = $this->document->getTitle();
 
 		$data['base'] = $server;
@@ -61,6 +70,9 @@ class ControllerCommonHeader extends Controller {
 		$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
 
+		$data['text_contact'] = $this->language->get('text_contact');
+		$data['contact'] = $this->url->link('information/contact');
+		
 		$data['text_account'] = $this->language->get('text_account');
 		$data['text_register'] = $this->language->get('text_register');
 		$data['text_login'] = $this->language->get('text_login');

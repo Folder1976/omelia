@@ -3,8 +3,21 @@ class ControllerExtensionModuleFeatured extends Controller {
 	public function index($setting) {
 		$this->load->language('extension/module/featured');
 
-		$data['heading_title'] = $this->language->get('heading_title');
-
+		$data['language_id'] = (int)$this->config->get('config_language_id');
+		
+		if(isset($setting['heading_title'])){
+			$data['heading_title'] = $setting['heading_title'];
+		}else{
+			$data['heading_title'] = $this->language->get('heading_title');
+		}
+		
+		if(isset($setting['module_id'])){
+			$data['module_id'] = $setting['module_id'];
+		}else{
+			$data['module_id'] = 'no_module_id';
+		}
+		
+		
 		$data['text_tax'] = $this->language->get('text_tax');
 
 		$data['button_cart'] = $this->language->get('button_cart');
@@ -12,6 +25,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 		$data['button_compare'] = $this->language->get('button_compare');
 
 		$this->load->model('catalog/product');
+		$this->load->model('catalog/manufacturer');
 
 		$this->load->model('tool/image');
 
@@ -21,6 +35,9 @@ class ControllerExtensionModuleFeatured extends Controller {
 			$setting['limit'] = 4;
 		}
 
+
+		$data['manufacturers'] = array();
+		
 		if (!empty($setting['product'])) {
 			$products = array_slice($setting['product'], 0, (int)$setting['limit']);
 
@@ -34,6 +51,8 @@ class ControllerExtensionModuleFeatured extends Controller {
 						$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 					}
 
+					
+					
 					if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 						$price = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 					} else {
@@ -57,20 +76,67 @@ class ControllerExtensionModuleFeatured extends Controller {
 					} else {
 						$rating = false;
 					}
+					
+					$options = array();
 
-					$data['products'][] = array(
+					foreach ($this->model_catalog_product->getProductOptions($product_info['product_id'], 11) as $option) {
+						$product_option_value_data = array();
+		
+						foreach ($option['product_option_value'] as $option_value) {
+							if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+								if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
+									$price_o = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false), $this->session->data['currency']);
+								} else {
+									$price_o = false;
+								}
+		
+								$product_option_value_data[] = array(
+									'product_option_value_id' => $option_value['product_option_value_id'],
+									'option_value_id'         => $option_value['option_value_id'],
+									'name'                    => $option_value['name'],
+									'image'                   => $option_value['image'] ? $this->model_tool_image->resize($option_value['image'], 50, 50) : '',
+									'price'                   => $price_o,
+									'price_prefix'            => $option_value['price_prefix']
+								);
+							}
+						}
+		
+						$options = array(
+							'product_option_id'    => $option['product_option_id'],
+							'product_option_value' => $product_option_value_data,
+							'option_id'            => $option['option_id'],
+							'name'                 => $option['name'],
+							'type'                 => $option['type'],
+							'value'                => $option['value'],
+							'required'             => $option['required']
+						);
+					}
+					
+					$data['manufacturers'][$product_info['manufacturer_id']] = array();
+					
+					$data['products'][$product_info['manufacturer_id']][] = array(
 						'product_id'  => $product_info['product_id'],
 						'thumb'       => $image,
 						'name'        => $product_info['name'],
 						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
 						'price'       => $price,
 						'special'     => $special,
+						'options'		=> $options,
 						'tax'         => $tax,
 						'rating'      => $rating,
 						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
 					);
 				}
 			}
+		
+			
+			foreach($data['manufacturers'] as $index => $row){
+				
+				$data['manufacturers'][$index] = $this->model_catalog_manufacturer->getManufacturer($index);
+				
+			}
+			
+			
 		}
 
 		if ($data['products']) {
