@@ -99,7 +99,7 @@
 
         <div class="header-top__right">
           <ul>
-            <li><a href="<?php echo $account; ?>">Вхід</a><span>|</span><?php echo $currency; ?><span>|</span><?php echo $language; ?></li>
+            <li><a href="<?php echo $account; ?>">Вхід</a><span class="separator">|</span><?php echo $currency; ?><span class="separator">|</span><?php echo $language; ?></li>
           </ul>
         </div>
       </div>

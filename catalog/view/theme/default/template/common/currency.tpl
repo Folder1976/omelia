@@ -1,8 +1,29 @@
 <?php if (count($currencies) > 1) { ?>
+<div class="li-item">
+<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-currency">
+  <div class="btn-group">
+    <span class="dropdown-toggle" data-toggle="dropdown"><?php echo $code; ?></span>
+    <ul class="dropdown-menu">
+      <?php foreach ($currencies as $currency) { ?>
+      <li><button class="currency-select btn-link" type="button" name="<?php echo $currency['code']; ?>"><?php echo $currency['code']; ?></button></li>
+      <?php } ?>
+    </ul>
+  </div>
+  <input type="hidden" name="code" value="" />
+  <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
+</form>
+</div>
+<?php } ?>
+
+
+
+<?php if (false) { ?>
+
 <div class="pull-left">
 <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form-currency">
   <div class="btn-group">
     <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+      <?php echo $code; ?>
     <?php foreach ($currencies as $currency) { ?>
     <?php if ($currency['symbol_left'] && $currency['code'] == $code) { ?>
     <strong><?php echo $currency['symbol_left']; ?></strong>
@@ -25,4 +46,6 @@
   <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
 </form>
 </div>
+
+
 <?php } ?>

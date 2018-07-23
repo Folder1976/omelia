@@ -27,6 +27,19 @@ $(document).mouseup(function (e){
     closeTopNav();
   }
 });
+
+/*************************************************************/
+// выпадающее меню .dropdown-menu
+$('.dropdown-toggle').on('click', function(){
+  var menu = $(this).parent().find('.dropdown-menu');
+  menu.toggleClass('open');
+});
+$(document).mouseup(function (e){
+  if ( $(e.target).closest('.dropdown-menu').length === 0 && $(e.target).closest('.dropdown-toggle').length === 0 ) {
+    $('.dropdown-menu').removeClass('open');
+  }
+});
+
 /*************************************************************/
 // owl carousel
 $(".js-owl-carousel-default").owlCarousel({

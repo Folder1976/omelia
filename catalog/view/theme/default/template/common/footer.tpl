@@ -34,7 +34,7 @@
           <div class="col-lg-8">
             <form action="" class="form form_white form-footer-subscribe">
               <input type="email" name="email" class="input" placeholder="Введіть свій Email">
-              <button type="submit" class="btn btn_white"><svg class="svg-paper-plane"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#paper-plane"></use></svg>підписатись</button>
+              <button type="submit" class="btn btn_transparent"><svg class="svg-paper-plane"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#paper-plane"></use></svg>підписатись</button>
             </form>
           </div>
         </div>
