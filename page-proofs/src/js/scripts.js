@@ -27,6 +27,50 @@ $(document).mouseup(function (e){
     closeTopNav();
   }
 });
+
+/*************************************************************/
+// Открываем/закрываем корзину
+var miniCart = $('#mini-cart');
+
+function openMiniCart(){
+  miniCart.addClass('open');
+  $('body').addClass('mini-cart-is-open');
+}
+function closeMiniCart(){
+  miniCart.removeClass('open');
+  $('body').removeClass('mini-cart-is-open');
+}
+$('body').on('click', '.js-open-mini-cart', function(){
+  if ( miniCart.hasClass('open') ) {
+    closeMiniCart();
+  } else {
+    openMiniCart();
+  }
+});
+$('body').on('click', '.js-close-mini-cart', function(){
+  closeMiniCart();
+});
+
+$(document).mouseup(function (e){
+  if ( $(e.target).closest('.js-open-mini-cart').length === 0 && $(e.target).closest(miniCart).length === 0 ) {
+    closeMiniCart();
+  }
+});
+
+
+
+/*************************************************************/
+// выпадающее меню .dropdown-menu
+$('.dropdown-toggle').on('click', function(){
+  var menu = $(this).parent().find('.dropdown-menu');
+  menu.toggleClass('open');
+});
+$(document).mouseup(function (e){
+  if ( $(e.target).closest('.dropdown-menu').length === 0 && $(e.target).closest('.dropdown-toggle').length === 0 ) {
+    $('.dropdown-menu').removeClass('open');
+  }
+});
+
 /*************************************************************/
 // owl carousel
 $(".js-owl-carousel-default").owlCarousel({
@@ -162,8 +206,60 @@ $('.tabs').on('click', 'li a', function(e){
 
 
 /*************************************************************/
+// стилизация select
 $('.form-control-select').customSelect();
 
+/*************************************************************/
+// fancybox 
+function fb_open (c) {
+  $.fancybox.open({
+    content: c,
+    type: 'html',
+    padding: 0,
+    margin: 0,
+    autoSize: false,
+    infobar: true,
+    toolbar: true,
+    btnTpl   : {
+      smallBtn : '<span data-fancybox-close="" class="close-btn fb-modal__close" title="Close"><svg class="svg-close"><use xlink:href="img/sprite/svgSprite.svg#close"></use></svg></snap>',
+    }
+  });
+}
 
+
+/*************************************************************/
+// формы обратной связи
+$('.js-form-call-me').submit(function(e){
+  var c = $('#fb-modal_form-call-me');
+  c.html('<h2></h2>');
+
+  $.ajax({
+    url: '/index.php?route=account/universalform',
+    type: 'post',
+    dataType: 'json',
+    //dataType: 'html',
+    beforeSend: function () {
+      c.find('h2').html('<h2>Сообщение отсылается. Пожалуйста подождите...</h2>');
+      fb_open(c);
+    },
+    data: $(this).serialize(),
+    success: function(json) {
+    console.log(json);
+
+      if (json['success']) {
+        c.find('h2').html('<h2>Форма отправлена</h2>');
+      } else {
+        c.find('h2').html('<h2>Ошибка</h2>');
+      }
+
+      if ( !$('body').hasClass('fancybox-active') ) {
+        fb_open(c);
+      }
+      
+    }
+  });
+
+  return false;
+});
 
 });

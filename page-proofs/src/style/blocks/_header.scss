@@ -64,7 +64,7 @@
     li {
       margin-left: 15px;
     }
-    span {
+    .separator {
       margin: 0 15px;
     }
   }
@@ -184,4 +184,36 @@
   max-height: calc(100vh - 90px);
 }
 
+.header-cart {
+  position: relative;
+}
 
+.open-mini-cart {
+  cursor: pointer;
+  &:hover {
+    opacity: .7;
+  }
+}
+.mini-cart {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: -100vw;
+  bottom: 0;
+  background: #fff;
+  transition: all 300ms;
+  padding-right: calc((100vw - 1520px) / 2);
+  padding-left: 100px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  &.open {
+    right: 0;
+  }
+  .close-btn {
+    margin-left: calc(100% - 26px);
+  }
+
+  &__content {
+    margin-top: 80px;
+  }
+}
