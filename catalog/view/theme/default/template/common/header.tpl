@@ -42,8 +42,8 @@
 <link rel="stylesheet" href="catalog/view/theme/default/stylesheet/style.css">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/lib/owl.carousel.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/lib/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/scripts_lib.js"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/scripts.js"></script>
 
@@ -99,7 +99,7 @@
 
         <div class="header-top__right">
           <ul>
-            <li><a href="<?php echo $account; ?>">Вхід</a><span>|</span><?php echo $currency; ?><span>|</span><?php echo $language; ?></li>
+            <li><a href="<?php echo $account; ?>">Вхід</a><span class="separator">|</span><?php echo $currency; ?><span class="separator">|</span><?php echo $language; ?></li>
           </ul>
         </div>
       </div>
@@ -149,7 +149,8 @@
 
         <div class="header__right">
           <?php echo $cart;?>
-          <?php echo $text_wishlist; ?>
+          <a href="<?php echo $wishlist; ?>" id="wishlist-total"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg>
+          <span class="number"><?php echo $text_wishlist; ?></span></a>
         </div>
       </div>
     </div>
@@ -161,12 +162,12 @@
       <div class="header-mob-menu__content">
         <div class="header-mob-link">
           <ul>
-           <li><a href="<?php echo $informations[4]['href'];?>"><?php echo $informations[4]['title'];?></a></li>
+            <li><a href="<?php echo $informations[4]['href'];?>"><?php echo $informations[4]['title'];?></a></li>
             <li><a href="<?php echo $informations[7]['href'];?>"><?php echo $informations[7]['title'];?></a></li>
             <li><a href="<?php echo $informations[6]['href'];?>"><?php echo $informations[6]['title'];?></a></li>
             <li><a href="<?php echo $informations[8]['href'];?>"><?php echo $informations[8]['title'];?></a></li>
             <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-            </ul>
+          </ul>
         </div>
 
         <ul class="menu-mob-cat-tabs tabs">
@@ -206,3 +207,8 @@
     </div>
 
   </header>
+
+
+  <div id="fb-modal_form-call-me" class="fb-modal">
+    <h2></h2>
+  </div>

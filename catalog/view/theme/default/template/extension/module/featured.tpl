@@ -36,7 +36,7 @@
                 </div>
                 <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
                 <?php if($product['special']){ ?>
-                  <span class="price"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+                  <div class="price"><span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span></div>
                 <?php }else{ ?>
                   <div class="price"><?php echo $product['price']; ?></div>
                 <?php } ?>

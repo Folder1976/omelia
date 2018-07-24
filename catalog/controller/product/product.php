@@ -461,7 +461,7 @@ class ControllerProductProduct extends Controller {
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
 				);
 			}
-
+//0322591102 gakalog@ukr.net
 			$data['tags'] = array();
 
 			if ($product_info['tag']) {
@@ -477,6 +477,8 @@ class ControllerProductProduct extends Controller {
 
 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
+			$data['fastorder'] = $this->load->controller('product/fastorder', $product_info); // FastOrder Button
+			
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
 
 			$data['column_left'] = $this->load->controller('common/column_left');

@@ -52,7 +52,7 @@
           <?php } ?>
         </div>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-3" id="product">
         <div class="row product-detail">
           <div class="col">
             <h1><?php echo $heading_title; ?></h1>
@@ -69,7 +69,8 @@
           </div>
           <div class="col product-detail_col-right">
             <div class="model">Артикул: <?php echo $model; ?></div>
-            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" data-original-title="В закладки"><svg class="svg-heart-big"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
+            <!--button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button-->
+            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add('<?php echo $product_id; ?>');" data-original-title="В закладки"><svg class="svg-heart-big"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
           </div>
         </div>
 
@@ -202,10 +203,18 @@
 
         <?php } ?>
 
+        <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
+        <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
+        <br />
+        <!--button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button-->
 
-        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_black btn-buy" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');">додати в кошик</button>
+        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_black btn-buy">додати в кошик</button>
 
-        <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_white btn-buy">придбати в 1-клік</button>
+          <!-- Button fastorder -->
+          <?php  echo $fastorder;?>
+          <!-- END :  button fastorder -->
+
+        <!--button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_white btn-buy">придбати в 1-клік</button-->
 
         <div class="check-availability">
           <a href="#">Перевірити наявність товару в магазині</a>
@@ -507,7 +516,7 @@ $('.js-show-all-thumbnails').on('click', function() {
             <?php } ?>
           </ul>
           <?php } ?>
-          <div id="product">
+          <div id="product1">
             <?php if ($options) { ?>
             <hr>
             <h3><?php echo $text_option; ?></h3>
@@ -760,6 +769,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 //--></script>
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
+  
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
@@ -797,9 +807,12 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+        
+        $('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+        console.log(json['total']);
+        
+				$('#cart-total').html('' + json['total'] + '');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 

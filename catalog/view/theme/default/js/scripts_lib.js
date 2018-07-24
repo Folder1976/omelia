@@ -9,11 +9,30 @@ $.fn.hasAttr = function(name) {
 };
 
 /*************************************************************/
-// Бутстраповские табы:
-// = ../../bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js
+// бутстраповский button
+$.fn.button = function( ev ){
+  this.each(function(){
+    // only handle "someElement"
+    if (false == $(this).hasAttr("data-loading-text")) {
+      return; // do nothing
+    }
 
-// fancybox
-// = ../../bower_components/fancybox/dist/jquery.fancybox.min.js
+    if ( ev == "loading" ) {
+      $(this).data( 'reset-text', $(this).html() );
+      $(this).html( $(this).data('loading-text') );
+    }
+    if ( ev == "reset" ) {
+      $(this).html( $(this).data('reset-text') );
+    }
+    
+    return $(this); // support chaining
+  });    
+};
+/*************************************************************/
+// Заглушка для бутстраповского tooltip
+$.fn.tooltip = function() {
+   return;
+};
 
 /*************************************************************/
 // custom-select

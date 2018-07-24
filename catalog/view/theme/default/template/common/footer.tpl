@@ -32,9 +32,10 @@
             <p><?php echo $lib['Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!']; ?></p>
           </div>
           <div class="col-lg-8">
-            <form action="" class="form form_white form-footer-subscribe">
+            <form action="" class="form form_white form-footer-subscribe js-form-call-me">
+              <input type="hidden" name="formname" value="footer-subscribe">
               <input type="email" name="email" class="input" placeholder="Введіть свій Email">
-              <button type="submit" class="btn btn_white"><svg class="svg-paper-plane"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#paper-plane"></use></svg>підписатись</button>
+              <button type="submit" class="btn btn_transparent"><svg class="svg-paper-plane"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#paper-plane"></use></svg>підписатись</button>
             </form>
           </div>
         </div>
