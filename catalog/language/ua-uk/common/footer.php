@@ -20,4 +20,4 @@ $_['text_order']        = 'Історія замовлень';
 $_['text_wishlist']     = 'Список побажань';
 $_['text_newsletter']   = 'Розсилання новин';
 $_['text_powered']      = 'O. Meliya 2018. Всі права застережено';
-$_['text_powered2']      = 'Розроблено: Like IT Solutions';
+$_['text_powered2']      = 'Розроблено: <a href="http://like-it.solutions/">Like IT Solutions</a>';

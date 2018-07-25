@@ -15,4 +15,4 @@ $_['text_order']        = 'Order History';
 $_['text_wishlist']     = 'Wish List';
 $_['text_newsletter']   = 'Newsletter';
 $_['text_powered']      = 'O. Meliya 2018. All rights reserved';
-$_['text_powered2']      = 'Developed: Like IT Solutions';
+$_['text_powered2']      = 'Developed: <a href="http://like-it.solutions/">Like IT Solutions</a>';
