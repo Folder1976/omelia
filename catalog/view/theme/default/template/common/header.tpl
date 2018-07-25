@@ -99,7 +99,7 @@
 
         <div class="header-top__right">
           <ul>
-            <li><a href="<?php echo $account; ?>">Вхід</a><span class="separator">|</span><?php echo $currency; ?><span class="separator">|</span><?php echo $language; ?></li>
+            <li><a href="<?php echo $account; ?>">Вхід</a><!-- <span class="separator">|</span><?php echo $currency; ?> --><span class="separator">|</span><?php echo $language; ?></li>
           </ul>
         </div>
       </div>
@@ -149,12 +149,8 @@
 
         <div class="header__right">
           <?php echo $cart;?>
-<<<<<<< HEAD
           <a href="<?php echo $wishlist; ?>" id="wishlist-total"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg>
           <span class="number"><?php echo $text_wishlist; ?></span></a>
-=======
-          <a href="#"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg><span class="number"><?php echo $text_wishlist; ?></span></a>
->>>>>>> 15449d8046fac6c8036c52c74704a0f8e3c76305
         </div>
       </div>
     </div>
@@ -213,6 +209,12 @@
   </header>
 
 
-  <div id="fb-modal_form-call-me" class="fb-modal">
-    <h2></h2>
-  </div>
+
+
+  <div style="display: none;">
+
+    <div id="fb-modal_form-call-me" class="fb-modal">
+      <h2></h2>
+    </div>
+
+  </div> <!-- div.display: none; -->

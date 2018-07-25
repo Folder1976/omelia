@@ -33,7 +33,7 @@
 
 
 .footer {
-  padding: 80px 0 120px;
+  padding: 80px 0 12rem;
 
   &-inner {
     display: flex;
@@ -138,4 +138,7 @@
   padding: 3px 0;
   color: #979797;
   background-color: #202020;
+  .r {
+    text-align: right;
+  }
 }

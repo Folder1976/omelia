@@ -163,10 +163,6 @@ var cart = {
 					setTimeout(function () {
 						// $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 						$('#cart > button').html('<span class="d-none d-sm-inline">Корзина </span><svg class="svg-shopping-cart d-inline d-sm-none"><use xlink:href="img/sprite/svgSprite.svg#shopping-cart"></use></svg><span class="number" id="cart-total">' + json['total'] + '</span>');
-<<<<<<< HEAD
-						//$('#cart > button').html('111');
-=======
->>>>>>> 15449d8046fac6c8036c52c74704a0f8e3c76305
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');

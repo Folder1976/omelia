@@ -126,7 +126,10 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p><?php echo $powered; ?></p>
+        <div class="row">
+          <div class="col-sm-6"><p><?php echo $powered; ?></p></div>
+          <div class="col-sm-6 r"><p><?php echo $powered2; ?></p></div>
+        </div>
       </div>
     </div>
 

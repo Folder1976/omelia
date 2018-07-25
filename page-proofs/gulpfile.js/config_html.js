@@ -31,7 +31,7 @@ module.exports = {
 
     // собираем html-ки
     html: {
-      enable: false,
+      enable: true,
       src: "src",
       dest: "html",
       extensions: ["html"],
@@ -44,8 +44,8 @@ module.exports = {
 
     // при изменении php просто перезагружаем страницу в браузере
     php: {
-      enable: true,
-      src: "../catalog/view/theme/default/template",
+      enable: false,
+      src: "web",
       dest: "",
       extensions: ["php"],
     },
@@ -54,7 +54,7 @@ module.exports = {
     images: {
       enable: true,
       src: "src/img",
-      dest: "../catalog/view/theme/default/img",
+      dest: "html/img",
       extensions: ["jpg", "jpeg", "png", "svg", "gif"],
       minify: true,
       minifiConfig: {
@@ -66,7 +66,7 @@ module.exports = {
 
     // копируем шрифты
     fonts: {
-      enable: false,
+      enable: true,
       src: "src/fonts",
       dest: "html/fonts",
       extensions: ["woff2", "woff", "eot", "ttf", "svg", "otf"],
@@ -76,7 +76,7 @@ module.exports = {
     js: {
       enable: true,
       src: "src/js",
-      dest: "../catalog/view/theme/default/js",
+      dest: "html/js",
       extensions: ['js', 'jsx'],
       uglify: false
     },
@@ -95,7 +95,7 @@ module.exports = {
     svgSprite: {
       enable: true,
       src: "src/svgSprite/*.svg",
-      dest: "../catalog/view/theme/default/img/sprite",
+      dest: "html/img/sprite",
       svgstore: {},
     },
 
@@ -104,14 +104,14 @@ module.exports = {
     },
 
     copy: {
-      enable: false,
+      enable: true,
     },
 
     // собираем, компилируем стили
     styles: {
       enable: true,
       src: "src/style",
-      dest: "../catalog/view/theme/default/stylesheet",
+      dest: "html/css",
       extensions: ["sass", "scss", "css"],
       autoprefixer: { browsers: ['> 3%', 'last 2 versions', 'ie 9', 'ios 6', 'android 4'] },
       rename: { suffix: '.min' },
@@ -123,10 +123,10 @@ module.exports = {
     browserSync: {
       enable: true,
       param: {
-        // server: {
-        //   baseDir: "html"
-        // },
-        proxy: 'omeliya.like-it.solutions.localhost/', // Использование прокси-сервера, а не встроенного сервера
+        server: {
+          baseDir: "html"
+        },
+        // proxy: 'new_project.loc', // Использование прокси-сервера, а не встроенного сервера
 
 
         notify: false, // In-line нотификации ( блоки текста, говорящие подключились ли вы к серверу BrowserSync или нет )

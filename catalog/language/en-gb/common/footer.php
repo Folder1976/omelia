@@ -14,4 +14,5 @@ $_['text_account']      = 'My Account';
 $_['text_order']        = 'Order History';
 $_['text_wishlist']     = 'Wish List';
 $_['text_newsletter']   = 'Newsletter';
-$_['text_powered']      = 'Powered By <a href="mailto:folder.list@gmail.com">Folder Co, Lviv, UA</a><br /> %s &copy; %s';
+$_['text_powered']      = 'O. Meliya 2018. All rights reserved';
+$_['text_powered2']      = 'Developed: Like IT Solutions';

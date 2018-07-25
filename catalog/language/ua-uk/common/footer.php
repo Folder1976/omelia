@@ -19,4 +19,5 @@ $_['text_account']      = 'Обліковий запис';
 $_['text_order']        = 'Історія замовлень';
 $_['text_wishlist']     = 'Список побажань';
 $_['text_newsletter']   = 'Розсилання новин';
-$_['text_powered']      = 'Створено <a href="mailto:folder.list@gmail.com">Folder Co, Lviv, UA</a><br /> %s &copy; %s';
+$_['text_powered']      = 'O. Meliya 2018. Всі права застережено';
+$_['text_powered2']      = 'Розроблено: Like IT Solutions';

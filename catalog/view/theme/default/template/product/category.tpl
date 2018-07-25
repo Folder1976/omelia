@@ -26,7 +26,7 @@
   <div class="filter">
     <div class="container">
       <div class="row">
-        <div class="col-xl-9">
+        <div class="col-lg-9">
           <div class="filrer-inner">
 
             <select class="form-control form-control-select" name="" id="">
@@ -59,7 +59,7 @@
 
           </div>
         </div>
-        <div class="col-xl-3">
+        <div class="col-lg-3">
           <div class="sort-inner">
             <select id="input-sort" class="form-control form-control-select" onchange="location = this.value;">
               <?php foreach ($sorts as $sorts) { ?>
@@ -82,6 +82,7 @@
       <?php foreach ($products as $product) { ?>
         <div class="product">
           <div class="img" style="background-image: url(<?php echo $product['thumb']; ?>);">
+            <a href="<?php echo $product['href']; ?>" class="product-link"></a>
             <?php if(isset($product['options']['product_option_value']) AND count($product['options']['product_option_value']) > 0){?>
               <ul class="size">
                 <?php foreach($product['options']['product_option_value'] as $option_value){ ?>

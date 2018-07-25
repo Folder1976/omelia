@@ -105,7 +105,7 @@
   }
 
   &__right {
-    width: 40%;
+    width: 42%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -117,6 +117,10 @@
     a {
       margin-left: 20px;
       white-space: nowrap;
+      &:hover {
+        text-decoration: none;
+        opacity: .7;
+      }
     }
   }
 

@@ -76,7 +76,7 @@ $(document).mouseup(function (e){
 $(".js-owl-carousel-default").owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: true,
   responsive: {
@@ -101,7 +101,7 @@ $(".js-owl-carousel-default").owlCarousel({
 $(".js-owl-carousel-related").owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: false,
   responsive: {
@@ -132,7 +132,7 @@ var owlHome = $(".js-owl-carousel-home");
 owlHome.owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: true,
   items: 1,
@@ -221,7 +221,7 @@ function fb_open (c) {
     infobar: true,
     toolbar: true,
     btnTpl   : {
-      smallBtn : '<span data-fancybox-close="" class="close-btn fb-modal__close" title="Close"><svg class="svg-close"><use xlink:href="img/sprite/svgSprite.svg#close"></use></svg></snap>',
+      smallBtn : '<span data-fancybox-close="" class="close-btn fb-modal__close" title="Close"><svg class="svg-close"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#close"></use></svg></snap>',
     }
   });
 }
