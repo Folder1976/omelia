@@ -27,7 +27,8 @@ body {
   }
   &.modal-is-open,
   &.mob-menu-is-open,
-  &.mini-cart-is-open {
+  &.mini-cart-is-open,
+  &.fastorder-is-open {
     &:before {
       opacity: .5;
       z-index: 100;
@@ -108,7 +109,8 @@ a {
   }
 }
 
-b {
+b,
+.bold {
   font-weight: bold;
 }
 
@@ -205,6 +207,26 @@ input:focus {
     border-color: #000;
     color: #fff;
     background: #000;
+  }
+  &_grey {
+    border-color: #818181;
+    color: #818181;
+  }
+}
+a.btn_black {
+  color: #fff;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}
+a.btn_grey {
+  color: #818181;
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
   }
 }
 .btn-wishlist {

@@ -29,7 +29,7 @@ $(document).mouseup(function (e){
 });
 
 /*************************************************************/
-// Открываем/закрываем корзину
+// Открываем/закрываем мини корзину
 var miniCart = $('#mini-cart');
 
 function openMiniCart(){
@@ -37,7 +37,7 @@ function openMiniCart(){
   $('body').addClass('mini-cart-is-open');
 }
 function closeMiniCart(){
-  miniCart.removeClass('open');
+  miniCart.removeClass('open').removeClass('detail');
   $('body').removeClass('mini-cart-is-open');
 }
 $('body').on('click', '.js-open-mini-cart', function(){
@@ -54,6 +54,71 @@ $('body').on('click', '.js-close-mini-cart', function(){
 $(document).mouseup(function (e){
   if ( $(e.target).closest('.js-open-mini-cart').length === 0 && $(e.target).closest(miniCart).length === 0 ) {
     closeMiniCart();
+  }
+});
+
+/*************************************************************/
+// Открываем/закрываем детализацию корзины
+$('.js-open-detail-cart').on('click', function(){
+  $('#mini-cart').addClass('detail');
+});
+
+
+
+// var miniCart = $('#mini-cart');
+
+// function openDetailCart(){
+//   miniCart.addClass('open');
+//   $('body').addClass('mini-cart-is-open');
+// }
+// function closeDetailCart(){
+//   miniCart.removeClass('open');
+//   $('body').removeClass('mini-cart-is-open');
+// }
+// $('body').on('click', '.js-open-mini-cart', function(){
+//   if ( miniCart.hasClass('open') ) {
+//     closeDetailCart();
+//   } else {
+//     openMiniCart();
+//   }
+// });
+// $('body').on('click', '.js-close-mini-cart', function(){
+//   closeDetailCart();
+// });
+
+// $(document).mouseup(function (e){
+//   if ( $(e.target).closest('.js-open-mini-cart').length === 0 && $(e.target).closest(miniCart).length === 0 ) {
+//     closeMiniCart();
+//   }
+// });
+
+
+/*************************************************************/
+// Открываем/закрываем форму fastorder
+var fastorder = $('.js-fastorder-form');
+
+function openFastorder(){
+  fastorder.addClass('open');
+  $('body').addClass('fastorder-is-open');
+}
+function closeFastorder(){
+  fastorder.removeClass('open');
+  $('body').removeClass('fastorder-is-open');
+}
+$('body').on('click', '.js-open-fastorder', function(){
+  if ( fastorder.hasClass('open') ) {
+    closeFastorder();
+  } else {
+    openFastorder();
+  }
+});
+$('body').on('click', '.js-close-fastorder', function(){
+  closeFastorder();
+});
+
+$(document).mouseup(function (e){
+  if ( $(e.target).closest('.js-open-fastorder').length === 0 && $(e.target).closest(fastorder).length === 0 ) {
+    closeFastorder();
   }
 });
 

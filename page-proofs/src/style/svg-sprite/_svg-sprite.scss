@@ -48,6 +48,16 @@
   margin-left: 10px;
   margin-right: -10px;
 }
+.svg-cart-left-arrow {
+  width: 22px;
+  height: 25px;
+  margin-right: 20px;
+}
+.svg-cart-right-arrow {
+  width: 22px;
+  height: 25px;
+  margin-left: 20px;
+}
 
 .svg-paper-plane {
   width: 32px;
@@ -95,6 +105,18 @@
     fill: #f22626;
   }
 }
+.svg-remove {
+  width: 14px;
+  height: 14px;
+  margin-right: 20px;
+  transition: all 300ms;
+  &:hover,
+  a:hover &,
+  div:hover > & {
+    fill: #f22626;
+  }
+}
+
 
 
 

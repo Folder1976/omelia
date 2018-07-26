@@ -137,6 +137,27 @@
 
 
 
+  <script>
+    function showForm(data){
+      $.ajax({
+        url: 'index.php?route=product/fastorder/getForm',
+        type: 'post',
+        data: {product_name: data['product_name'], price: data['price'] ,product_id: data['product_id'], product_link: data['product_link']},
+
+        beforeSend: function() {
+        },
+        complete: function() {
+        },
+        success: function(result) {
+          $('#fastorder-form-container'+data['product_id']).html(result);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+      });
+  };
+  </script>
+
 <!--
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com

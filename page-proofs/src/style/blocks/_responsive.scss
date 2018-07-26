@@ -21,7 +21,8 @@
   .sort-inner {
     text-align: left;
   }
-  .mini-cart {
+  .mini-cart,
+  .fastorder-form {
     padding-right: calc((100vw - 1180px) / 2);
   }
 
@@ -81,7 +82,8 @@
     width: auto;
   }
 
-  .mini-cart {
+  .mini-cart,
+  .fastorder-form {
     padding-right: calc((100vw - 720px) / 2);
   }
 
@@ -170,7 +172,8 @@
 
 
 
-  .mini-cart {
+  .mini-cart,
+  .fastorder-form {
     padding-right: calc((100vw - 540px) / 2);
     padding-left: 20px;
   }
@@ -248,7 +251,8 @@
     width: 99%;
   }
 
-  .mini-cart {
+  .mini-cart,
+  .fastorder-form {
     padding-right: 20px;
   }
 
