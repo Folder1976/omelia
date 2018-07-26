@@ -26,6 +26,22 @@
   }
 }
 
+.contact-page .input {
+  width: 100%;
+
+  &:invalid {
+    border: 0;
+    border-bottom: 2px solid #f22626 !important;
+    transition: all 300ms;
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: #aeaeae;
+    opacity: .5;
+  }
+}
+
 
 
 

@@ -1,10 +1,169 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
+
+
+<main class="site-content contact-page">
+  <div class="content-top">
+    <div class="container">
+      <div class="content-top-inner">
+        <div>
+          <div class="bread_crumbs">
+            <ul>
+              <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+              <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+              <?php } ?>
+            </ul>
+          </div>
+          <h1><?php echo $heading_title; ?></h1>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /.content-top -->
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="address-row">
+          <div class="social-icons">
+            <a href="#"><svg class="svg-facebook"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#facebook"></use></svg></a>
+            <a href="#"><svg class="svg-instagram"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#instagram"></use></svg></a>
+          </div>
+          <div class="address">
+            <h3><?php echo $text_address; ?></h3>
+            <p>ТРЦ KingCrossLeopolis<br>Вул. Стрийська, 30, с. Сокільники</p>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="contact-wrap">
+          <div class="block">
+            <div class="title">телефон</div>
+            <p><a href="tel:+380971101107"></a><?php echo $telephone; ?><br><a href="tel:+380971101107"></a><?php echo $telephone; ?></p>
+          </div>
+          <div class="block">
+            <div class="title">EMAIL</div>
+            <p><a href="mailto:INFO@Julia.COM.UA">INFO@Julia.COM.UA</a></p>
+          </div>
+          <div class="block">
+            <div class="title">ГРАФІК РОБОТИ</div>
+            <p>щодня з 10:00 до 22:00<br>нд з 10:00 до 22:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5153.272891773276!2d24.00650844141766!3d49.774095284979474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1532624159465" height="276" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+        <p class="map-text">Бажаєте запитати про щось? Ми будемо раді відповісти на ваші питання</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+
+        <div class="text-center">
+          <button class="btn js-open-contact-form">запитати <svg class="svg-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></button>
+        </div>
+
+
+        <?php if ( strlen($error_name) != 0 || strlen($error_email) != 0 || strlen($error_enquiry) != 0 ) { ?>
+          <div class="contact-form open">
+        <?php } else { ?>
+          <div class="contact-form">
+        <?php } ?>
+          <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+              <div class="form-group required">
+                <!-- <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_name; ?></label> -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control input" placeholder="<?php echo $entry_name; ?>">
+                    <?php if ($error_name) { ?>
+                    <div class="text-danger"><?php echo $error_name; ?></div>
+                    <?php } ?>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control input" placeholder="<?php echo $entry_email; ?>">
+                    <?php if ($error_email) { ?>
+                    <div class="text-danger"><?php echo $error_email; ?></div>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group required">
+                <!-- <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label> -->
+                
+              </div>
+              <div class="form-group required">
+                <!-- <label class="col-sm-2 control-label" for="input-enquiry"><?php echo $entry_enquiry; ?></label> -->
+                <div class="row">
+                  <div class="col-sm-12">
+                    <textarea name="enquiry" rows="5  " id="input-enquiry" class="form-control input" placeholder="<?php echo $entry_enquiry; ?>"><?php echo $enquiry; ?></textarea>
+                    <?php if ($error_enquiry) { ?>
+                    <div class="text-danger"><?php echo $error_enquiry; ?></div>
+                    <?php } ?>
+                  </div>
+                </div>
+              </div>
+              <?php echo $captcha; ?>
+            </fieldset>
+            <div class="buttons text-center">
+              <div class="pull-right">
+                <input class="btn" type="submit" value="<?php echo $button_submit; ?>" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<?php echo $footer; ?>
+
+
+
+<script>
+$('.js-open-contact-form').on('click', function(){
+  $('.contact-form').toggleClass('open');
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="display: none;">
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -100,45 +259,18 @@
         <?php } ?>
       </div>
       <?php } ?>
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
-        <fieldset>
-          <legend><?php echo $text_contact; ?></legend>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-name"><?php echo $entry_name; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="name" value="<?php echo $name; ?>" id="input-name" class="form-control" />
-              <?php if ($error_name) { ?>
-              <div class="text-danger"><?php echo $error_name; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="email" value="<?php echo $email; ?>" id="input-email" class="form-control" />
-              <?php if ($error_email) { ?>
-              <div class="text-danger"><?php echo $error_email; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-enquiry"><?php echo $entry_enquiry; ?></label>
-            <div class="col-sm-10">
-              <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"><?php echo $enquiry; ?></textarea>
-              <?php if ($error_enquiry) { ?>
-              <div class="text-danger"><?php echo $error_enquiry; ?></div>
-              <?php } ?>
-            </div>
-          </div>
-          <?php echo $captcha; ?>
-        </fieldset>
-        <div class="buttons">
-          <div class="pull-right">
-            <input class="btn btn-primary" type="submit" value="<?php echo $button_submit; ?>" />
-          </div>
-        </div>
-      </form>
+      
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-<?php echo $footer; ?>
+
+
+
+
+
+
+
+
+
+
+
