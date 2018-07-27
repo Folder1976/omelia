@@ -29,7 +29,7 @@ $(document).mouseup(function (e){
 });
 
 /*************************************************************/
-// Открываем/закрываем корзину
+// Открываем/закрываем мини корзину
 var miniCart = $('#mini-cart');
 
 function openMiniCart(){
@@ -37,7 +37,7 @@ function openMiniCart(){
   $('body').addClass('mini-cart-is-open');
 }
 function closeMiniCart(){
-  miniCart.removeClass('open');
+  miniCart.removeClass('open').removeClass('detail');
   $('body').removeClass('mini-cart-is-open');
 }
 $('body').on('click', '.js-open-mini-cart', function(){
@@ -54,6 +54,71 @@ $('body').on('click', '.js-close-mini-cart', function(){
 $(document).mouseup(function (e){
   if ( $(e.target).closest('.js-open-mini-cart').length === 0 && $(e.target).closest(miniCart).length === 0 ) {
     closeMiniCart();
+  }
+});
+
+/*************************************************************/
+// Открываем/закрываем детализацию корзины
+$('.js-open-detail-cart').on('click', function(){
+  $('#mini-cart').addClass('detail');
+});
+
+
+
+// var miniCart = $('#mini-cart');
+
+// function openDetailCart(){
+//   miniCart.addClass('open');
+//   $('body').addClass('mini-cart-is-open');
+// }
+// function closeDetailCart(){
+//   miniCart.removeClass('open');
+//   $('body').removeClass('mini-cart-is-open');
+// }
+// $('body').on('click', '.js-open-mini-cart', function(){
+//   if ( miniCart.hasClass('open') ) {
+//     closeDetailCart();
+//   } else {
+//     openMiniCart();
+//   }
+// });
+// $('body').on('click', '.js-close-mini-cart', function(){
+//   closeDetailCart();
+// });
+
+// $(document).mouseup(function (e){
+//   if ( $(e.target).closest('.js-open-mini-cart').length === 0 && $(e.target).closest(miniCart).length === 0 ) {
+//     closeMiniCart();
+//   }
+// });
+
+
+/*************************************************************/
+// Открываем/закрываем форму fastorder
+var fastorder = $('.js-fastorder-form');
+
+function openFastorder(){
+  fastorder.addClass('open');
+  $('body').addClass('fastorder-is-open');
+}
+function closeFastorder(){
+  fastorder.removeClass('open');
+  $('body').removeClass('fastorder-is-open');
+}
+$('body').on('click', '.js-open-fastorder', function(){
+  if ( fastorder.hasClass('open') ) {
+    closeFastorder();
+  } else {
+    openFastorder();
+  }
+});
+$('body').on('click', '.js-close-fastorder', function(){
+  closeFastorder();
+});
+
+$(document).mouseup(function (e){
+  if ( $(e.target).closest('.js-open-fastorder').length === 0 && $(e.target).closest(fastorder).length === 0 ) {
+    closeFastorder();
   }
 });
 
@@ -76,7 +141,7 @@ $(document).mouseup(function (e){
 $(".js-owl-carousel-default").owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: true,
   responsive: {
@@ -101,7 +166,7 @@ $(".js-owl-carousel-default").owlCarousel({
 $(".js-owl-carousel-related").owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: false,
   responsive: {
@@ -123,6 +188,30 @@ $(".js-owl-carousel-related").owlCarousel({
   }
 });
 
+$(".js-owl-lb").owlCarousel({
+  dots: false,
+  nav: true,
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  margin: 30,
+  loop: false,
+  stagePadding: 25,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    400: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1540: {
+      items: 4,
+    },
+  }
+});
+
+
 
 
 
@@ -132,7 +221,7 @@ var owlHome = $(".js-owl-carousel-home");
 owlHome.owlCarousel({
   dots: false,
   nav: true,
-  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
   margin: 3,
   loop: true,
   items: 1,
@@ -221,7 +310,7 @@ function fb_open (c) {
     infobar: true,
     toolbar: true,
     btnTpl   : {
-      smallBtn : '<span data-fancybox-close="" class="close-btn fb-modal__close" title="Close"><svg class="svg-close"><use xlink:href="img/sprite/svgSprite.svg#close"></use></svg></snap>',
+      smallBtn : '<span data-fancybox-close="" class="close-btn fb-modal__close" title="Close"><svg class="svg-close"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#close"></use></svg></snap>',
     }
   });
 }

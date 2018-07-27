@@ -188,6 +188,30 @@ $(".js-owl-carousel-related").owlCarousel({
   }
 });
 
+$(".js-owl-lb").owlCarousel({
+  dots: false,
+  nav: true,
+  navText: ["<svg class='svg-owl-left-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow'></use></svg>","<svg class='svg-owl-right-arrow'><use xlink:href='catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow'></use></svg>"],
+  margin: 30,
+  loop: false,
+  stagePadding: 25,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    400: {
+      items: 2,
+    },
+    992: {
+      items: 3,
+    },
+    1540: {
+      items: 4,
+    },
+  }
+});
+
+
 
 
 
