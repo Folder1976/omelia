@@ -11,7 +11,27 @@
   p {
     color: #7a7a7a;
   }
+
+  .advantages {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 50px;
+    .item {
+      max-width: 350px;
+      font-size: 14px;
+      color: #7a7a7a;
+      .title {
+        color: #0e0e0e;
+        font-size: 26px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
+
 
 
 /////// contact
