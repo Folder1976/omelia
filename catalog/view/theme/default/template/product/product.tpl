@@ -815,10 +815,11 @@ $('#button-cart').on('click', function() {
 				$('#cart-total').html('' + json['total'] + '');
         $('.js-cart-total').html('' + json['total'] + '');
 
+        $('.js-open-mini-cart').load('index.php?route=common/cart/info ul li');
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
         $('.js-open-mini-cart').click();
 
-				$('#cart-product-list').load('index.php?route=common/cart/info ul li');
+				//$('#cart-product-list').load('index.php?route=common/cart/info ul li');
 			}
 		},
         error: function(xhr, ajaxOptions, thrownError) {
