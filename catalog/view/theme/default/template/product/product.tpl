@@ -815,7 +815,7 @@ $('#button-cart').on('click', function() {
 				$('#cart-total').html('' + json['total'] + '');
         $('.js-cart-total').html('' + json['total'] + '');
 
-        $('.js-open-mini-cart').load('index.php?route=common/cart/info ul li');
+        $('#js-header-cart > #mini-cart').load('index.php?route=common/cart/info #mini-cart');
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
         $('.js-open-mini-cart').click();
 
