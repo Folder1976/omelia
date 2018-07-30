@@ -26,6 +26,69 @@
   }
 }
 
+
+.label {
+  cursor: pointer;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+
+.select {
+  border: 0;
+  border-bottom: 2px solid;
+  background: transparent;
+  padding: 14px 0;
+  transition: all 300ms;
+  color: inherit;
+  width: 100%;
+  margin: 15px 0 0;
+}
+
+
+.checkbox-wrap,
+.radio-wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+.checkbox,
+.radio {
+  display: none;
+}
+.checkbox + .label,
+.radio + .label {
+  padding-left: 40px;
+  position: relative;
+  font-size: 18px;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 1px solid #000;
+  }
+}
+.checkbox:checked + .label,
+.radio:checked + .label {
+  &:after {
+    background: #000;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .contact-page .input {
   width: 100%;
 
@@ -43,7 +106,27 @@
 }
 
 
+.checkout-page .input {
+  width: 100%;
+  border-bottom: 2px solid rgba(0,0,0,0.3);
+  margin: 15px 0 0;
+  &:invalid,
+  &.error {
+    border: 0;
+    border-bottom: 2px solid #f22626 !important;
+    transition: all 300ms;
+    box-shadow: none;
+  }
 
+  &::placeholder {
+    color: #aeaeae;
+    opacity: .5;
+  }
+
+  &:disabled {
+    border: 0;
+  }
+}
 
 
 

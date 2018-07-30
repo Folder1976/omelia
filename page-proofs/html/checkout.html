@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" href="/fav.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <meta name="description" content="checkout">
+    <title>checkout</title>
+
+</head>
+
+<body class="site">
+
+  <header class="site-header">
+
+    <div class="header-top__wrap">
+      <div class="container header-top">
+        <div class="btn-mob-nav">
+          <button class="js-mob-top-nav hamburger hamburger--stand" type="button">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </div>
+
+        <div class="header-top__left">
+          <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </div>
+
+        <div class="header-top__center">
+          <ul class="tabs">
+            <li class="active"><a href="#header-cat-woman">Жінки</a></li>
+            <li><a href="#header-cat-man">Чоловіки</a></li>
+          </ul>
+        </div>
+
+        <div class="header-top__right">
+          <ul>
+            <li><a href="#">Вхід</a><span>|</span><a href="#">Ua</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="header__wrap">
+      <div class="container header">
+      
+        <div class="header__left">
+          <div class="logo">
+            <a href="/"><img src="/img/logo.png" alt="logo"></a>
+          </div>
+        </div>
+
+        <div class="header__center">
+          <div class="menu-cat tabs-content">
+            <div class="tab active" id="header-cat-woman">
+              <ul>
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Дівчатка</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+                <li><a href="#">look book</a></li>
+              </ul>
+            </div>
+            <div class="tab" id="header-cat-man">
+              <ul>
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Чоловіки</a></li>
+                <!-- <li class="special"><a href="#">Акції</a></li>
+                <li><a href="#">look book</a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="header__right">
+          <a href="#"><span class="d-none d-sm-inline">Корзина </span><svg class="svg-shopping-cart d-inline d-sm-none"><use xlink:href="img/sprite/svgSprite.svg#shopping-cart"></use></svg><span class="number">0</span></a>
+          <a href="#"><svg class="svg-heart"><use xlink:href="img/sprite/svgSprite.svg#heart"></use></svg><span class="number">2</span></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="header-mob-menu">
+      <div class="close-btn js-mob-top-nav"><svg class="svg-close"><use xlink:href="img/sprite/svgSprite.svg#close"></use></svg></div>
+      
+      <div class="header-mob-menu__content">
+        <div class="header-mob-link">
+          <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Контакти</a></li>
+          </ul>
+        </div>
+
+        <ul class="menu-mob-cat-tabs tabs">
+          <li class="active"><a href="#header-mob-cat-woman">Жінки</a></li>
+          <li><a href="#header-mob-cat-man">Чоловіки</a></li>
+        </ul>
+
+        <div class="menu-mob-cat tabs-content">
+          <div class="tab active" id="header-mob-cat-woman">
+            <ul class="woman">
+              <li><a href="#">Новинки</a></li>
+              <li><a href="#">Одяг</a></li>
+              <li><a href="#">Взуття</a></li>
+              <li><a href="#">Аксесуари</a></li>
+              <li><a href="#">Дівчатка</a></li>
+              <li class="special"><a href="#">Акції</a></li>
+              <li><a href="#">look book</a></li>
+            </ul>
+          </div>
+          <div class="tab" id="header-mob-cat-man">
+            <ul class="man">
+              <li><a href="#">Новинки</a></li>
+              <li><a href="#">Одяг</a></li>
+              <li><a href="#">Взуття</a></li>
+              <li><a href="#">Аксесуари</a></li>
+              <li><a href="#">Чоловіки</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+  </header>
+
+
+<main class="site-content checkout-page">
+  <div class="container">
+    <div class="row">
+      <div class="bread_crumbs">
+        <ul>
+          <li><a href="/">Головна</a></li>
+          <li><a href="/">Корзина</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <h1>оформлення замовлення</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="cart-auth">Авторизуйтесь, щоб відслідкувати статус виконання покупки та зберегти її історію <a href="#" class="btn btn_grey">Авторизуватись <svg class="svg-cart-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
+      </div>
+
+
+      <div class="checkout__top">
+        <div class="row">
+          <div class="col-12">
+            <a href="#" class="go-back"><svg class="svg-cart-left-arrow"><use xlink:href="img/sprite/svgSprite.svg#left-arrow"></use></svg> Повернутись до корзини</a>
+
+            <div class="checkout__total-sum-header">Загальна сума: <span>UAH  3 330</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="checkout__steps">
+    <form action="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="checkout__step js-step-1">
+            <div class="checkout__step-number">1</div>
+            <div class="checkout__step-content">
+              <div class="title">контактні дані</div>
+              <input type="text" id="name" name="name" class="input" placeholder="Ваше імʼя">
+              <input type="text" id="phone" name="phone" class="input" placeholder="Номер телефону">
+              <a href="#" class="btn btn_black checkout-btn-step-1 js-step-1-continue active-view">продовжити</a>
+              <a href="#" class="checkout-edit-step-1 active-hidden js-step-1-edit">Редагувати</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-5 -->
+        <div class="col-lg-7">
+          <div class="checkout__step js-step-2">
+            <div class="checkout__step-number">2</div>
+            <div class="checkout__step-content">
+              <div class="title">доставка і оплата</div>
+              <ul class="step-tabs">
+                <li class="active"><a href="#" data-tab="delivery">Доставка</a></li>
+                <li><a href="#" data-tab="pay">Оплата</a></li>
+              </ul>
+
+              <div id="delivery" class="step-tab-content active">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-self" name="method-delivery" type="radio" value="delivery-self" checked>
+                      <label class="label" for="delivery-self">Самовивіз</label>
+                    </div>
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-privat" name="method-delivery" type="radio" value="delivery-privat">
+                      <label class="label" for="delivery-privat">Поштомат Приват Банк</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-nova-post" name="method-delivery" type="radio" value="delivery-nova-post">
+                      <label class="label" for="delivery-nova-post">Нова пошта</label>
+                    </div>
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-courier" name="method-delivery" type="radio" value="delivery-courier">
+                      <label class="label" for="delivery-courier">Кур'єром</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+
+                    <div id="delivery-self-content" class="delivery-content active">
+                      <div class="title">Наша адреса:</div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <p>м. Київ<br>вул. Чорновола, 56</p>
+                          <p>ПН - СБ: 10 - 17 <br>НД: вихідний</p>
+                        </div>
+                        <div class="col-md-4">
+                          <p><a href="tel:+380971101107">+38 097 11 01 107</a></p>
+                          <p><a href="tel:+380971101107">+38 097 11 01 107</a></p>
+                          <p><a href="" style="text-decoration: underline;">Зателефонувати мені</a></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-privat-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="privat-region" id="privat-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="privat-sity" id="privat-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="privat-department" id="privat-department" class="form-control form-control-select" placeholder="Відділення">
+                            <option value="1">Відділення 1</option>
+                            <option value="2">Відділення 2</option>
+                            <option value="3">Відділення 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-nova-post-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="nova-post-region" id="nova-post-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="nova-post-sity" id="nova-post-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="nova-post-department" id="nova-post-department" class="form-control form-control-select" placeholder="Відділення">
+                            <option value="1">Відділення 1</option>
+                            <option value="2">Відділення 2</option>
+                            <option value="3">Відділення 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-courier-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="courier-region" id="courier-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="courier-sity" id="courier-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <input type="text" name="courier-department" id="courier-department" class="input" placeholder="Адреса">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div id="pay" class="step-tab-content">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="visa" name="method-payment" type="radio">
+                      <label class="label" for="visa">Карта Visa и MasterCard</label>
+                    </div>
+                    <div class="radio-wrap">
+                      <input class="radio" id="privat" name="method-payment" type="radio">
+                      <label class="label" for="privat">На карту Приват24</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="upon-receipt" name="method-payment" type="radio">
+                      <label class="label" for="upon-receipt">При отриманні</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <textarea name="comment" id="comment" rows="3" class="input" placeholder="Коментар до замовлення..."></textarea>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-7 -->
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="btn-buy-wrap">
+            <button type="submit" class="btn btn_black btn-buy">оформити замовлення</button>
+          </div>          
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+
+
+
+</main>
+
+<script>
+
+function activeStep1(){
+  $('.js-step-1').addClass('active');
+  $('.js-step-2').removeClass('active');
+  $('.checkout__step').find('input, textarea').prop('disabled', true);
+  $('.checkout__step.active').find('input, textarea').prop('disabled', false);
+};
+
+function activeStep2(){
+  $('.js-step-1').removeClass('active');
+  $('.js-step-2').addClass('active');
+  $('.checkout__step').find('input, textarea').prop('disabled', true);
+  $('.checkout__step.active').find('input, textarea').prop('disabled', false);
+  // $('.form-control-select').trigger('render');
+};
+
+
+// Кнопка "Продовжити". (Шаг 1 делаем неактивным; шаг 2 делаем активным)
+$('.js-step-1-continue').on('click', function(e){
+  e.preventDefault;
+
+  $('#name').removeClass('error');
+  $('#phone').removeClass('error');
+  if ( $('#name').val()=='' ) {
+    $('#name').addClass('error');
+  }
+  if ( $('#phone').val()=='' ) {
+    $('#phone').addClass('error');
+  }
+
+  if ( $('#name').val()=='' || $('#phone').val()=='' ) {
+    return;
+  }
+
+  activeStep2();
+});
+
+// кнопка для редактирование первого шага
+$('.js-step-1-edit').on('click', function(e){
+  e.preventDefault;
+  activeStep1();
+});
+
+
+activeStep1();
+
+
+// вкладки "Доставка" и "Оплата"
+$('.step-tabs').on('click', 'a', function(e){
+  e.preventDefault;
+  // если вкладка не активна - ничего не делаем
+  if ( ! $('.js-step-2').hasClass('active') ) {
+    return;
+  }
+
+  var tab = $(this).data('tab');
+  $('.step-tab-content').removeClass('active');
+  $('#'+tab).addClass('active');
+
+  $('.step-tabs li').removeClass('active');
+  $(this).parent().addClass('active');
+});
+
+
+// при изменении способа доставки:
+$('#delivery').on('change', '.radio', function(e){
+  // какой method-delivery выбран
+  var md = $('.radio[name=method-delivery]:checked').val();
+  // debugger;
+  console.log(md);
+  $('.delivery-content').removeClass('active');
+  $('#' + md + '-content').addClass('active');
+});
+
+
+
+</script>
+
+
+  <footer class="site-footer">
+    <div class="subscribe">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h2>підписка на розсилку</h2>
+            <p>Підпишіться на нашу розсилку і станьте першим, хто отримає найновіші новини про моду, акції та інше!</p>
+          </div>
+          <div class="col-lg-8">
+            <form action="" class="form form_white form-footer-subscribe">
+              <input type="email" name="email" class="input" placeholder="Введіть свій Email">
+              <button type="submit" class="btn btn_transparent"><svg class="svg-paper-plane"><use xlink:href="img/sprite/svgSprite.svg#paper-plane"></use></svg>підписатись</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer__logo">
+            <div><a href=""><img src="img/logo.png" alt=""></a></div>
+            <p>Мережа магазинів стильного<br>та комфортного одягу</p>
+          </div>
+
+          <div class="footer__menu-1">
+            <ul>
+              <li><a href="#">Про нас</a></li>
+              <li><a href="#">Оплата</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">Контакти</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__menu-2">
+            <ul class="cat tabs">
+              <li class="active"><a href="#footer-cat-woman">Жінки</a></li>
+              <li><a href="#footer-cat-man">Чоловіки</a></li>
+            </ul>
+            <div class="tabs-content">
+              <ul class="sub-cat tab active" id="footer-cat-woman">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Дівчатка</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+              </ul>
+              <ul class="sub-cat tab" id="footer-cat-man">
+                <li><a href="#">Новинки</a></li>
+                <li><a href="#">Одяг</a></li>
+                <li><a href="#">Взуття</a></li>
+                <li><a href="#">Аксесуари</a></li>
+                <li><a href="#">Чоловіки</a></li>
+                <li class="special"><a href="#">Акції</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__contact footer-contact">
+            <div class="footer-contact__col">
+              <div class="footer-contact__row">
+                <div class="footer-contact__ico">
+                  <svg class="svg-phone"><use xlink:href="img/sprite/svgSprite.svg#phone"></use></svg>
+                </div>
+                <div class="footer-contact__text">
+                  <a href="tel:+380971101107">+38 097 1101107</a><br><a href="tel:+380971101107">+38 097 1101107</a>
+                </div>
+              </div>
+              <div class="footer-contact__row">
+                <div class="footer-contact__ico">
+                  <svg class="svg-email"><use xlink:href="img/sprite/svgSprite.svg#email"></use></svg>
+                </div>
+                <div class="footer-contact__text">
+                  <a href="mailto:info@julia.com.ua">INFO@Julia.COM.UA</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-contact__col">
+              <div class="footer-contact__row">
+                <a href="#" class="link_blue">Переглянути адреси<br>магазинів</a>
+              </div>
+              <div class="footer-contact__row">
+                <a href="#"><svg class="svg-facebook"><use xlink:href="img/sprite/svgSprite.svg#facebook"></use></svg></a>
+                <a href="#"><svg class="svg-instagram"><use xlink:href="img/sprite/svgSprite.svg#instagram"></use></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p><a href="/">O. Meliya</a> 2018. Всі права застережено</p>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  
+  <script type="text/javascript" src="js/lib/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/scripts_lib.js"></script>
+
+  <script type="text/javascript" src="js/scripts.js"></script>
+
+
+</body>
+</html>
