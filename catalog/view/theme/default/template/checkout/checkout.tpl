@@ -1,5 +1,348 @@
 <?php echo $header; ?>
-<div class="container">
+<main class="site-content checkout-page" id="content">
+  <div class="container">
+    <div class="row">
+      <div class="bread_crumbs">
+        <ul>
+          <li><a href="/">Головна</a></li>
+          <li><a href="/">Корзина</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <h1>оформлення замовлення</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <?php if ($error_warning) { ?>
+      <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div>
+      <?php } ?>
+    </div>
+    <div class="row">
+
+      <?php if (!$logged && $account != 'guest') { ?>
+        <div class="cart-auth">Авторизуйтесь, щоб відслідкувати статус виконання покупки та зберегти її історію <a href="#" class="btn btn_grey">Авторизуватись <svg class="svg-cart-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
+      </div>
+      <?php } ?>
+
+      
+
+
+      <div class="checkout__top">
+        <div class="row">
+          <div class="col-12">
+            <a href="/index.php?route=checkout/cart" class="go-back"><svg class="svg-cart-left-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow"></use></svg> Повернутись до корзини</a>
+
+            <div class="checkout__total-sum-header">Загальна сума: <span>UAH  3 330</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="checkout__steps">
+    <form action="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="checkout__step js-step-1">
+            <div class="checkout__step-number">1</div>
+            <div class="checkout__step-content">
+              <div class="title">контактні дані</div>
+              <input type="text" id="name" name="name" class="input" placeholder="Ваше імʼя">
+              <input type="text" id="phone" name="phone" class="input" placeholder="Номер телефону">
+              <a href="#" class="btn btn_black checkout-btn-step-1 js-step-1-continue active-view">продовжити</a>
+              <a href="#" class="checkout-edit-step-1 active-hidden js-step-1-edit">Редагувати</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-5 -->
+        <div class="col-lg-7">
+          <div class="checkout__step js-step-2">
+            <div class="checkout__step-number">2</div>
+            <div class="checkout__step-content">
+              <div class="title">доставка і оплата</div>
+              <ul class="step-tabs">
+                <li class="active"><a href="#" data-tab="delivery">Доставка</a></li>
+                <li><a href="#" data-tab="pay">Оплата</a></li>
+              </ul>
+
+              <div id="delivery" class="step-tab-content active">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-self" name="method-delivery" type="radio" value="delivery-self" checked>
+                      <label class="label" for="delivery-self">Самовивіз</label>
+                    </div>
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-privat" name="method-delivery" type="radio" value="delivery-privat">
+                      <label class="label" for="delivery-privat">Поштомат Приват Банк</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-nova-post" name="method-delivery" type="radio" value="delivery-nova-post">
+                      <label class="label" for="delivery-nova-post">Нова пошта</label>
+                    </div>
+                    <div class="radio-wrap">
+                      <input class="radio" id="delivery-courier" name="method-delivery" type="radio" value="delivery-courier">
+                      <label class="label" for="delivery-courier">Кур'єром</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+
+                    <div id="delivery-self-content" class="delivery-content active">
+                      <div class="title">Наша адреса:</div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <p>м. Київ<br>вул. Чорновола, 56</p>
+                          <p>ПН - СБ: 10 - 17 <br>НД: вихідний</p>
+                        </div>
+                        <div class="col-md-4">
+                          <p><a href="tel:+380971101107">+38 097 11 01 107</a></p>
+                          <p><a href="tel:+380971101107">+38 097 11 01 107</a></p>
+                          <p><a href="" style="text-decoration: underline;">Зателефонувати мені</a></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-privat-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="privat-region" id="privat-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="privat-sity" id="privat-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="privat-department" id="privat-department" class="form-control form-control-select" placeholder="Відділення">
+                            <option value="1">Відділення 1</option>
+                            <option value="2">Відділення 2</option>
+                            <option value="3">Відділення 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-nova-post-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="nova-post-region" id="nova-post-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="nova-post-sity" id="nova-post-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="nova-post-department" id="nova-post-department" class="form-control form-control-select" placeholder="Відділення">
+                            <option value="1">Відділення 1</option>
+                            <option value="2">Відділення 2</option>
+                            <option value="3">Відділення 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-courier-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="courier-region" id="courier-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="courier-sity" id="courier-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <input type="text" name="courier-department" id="courier-department" class="input" placeholder="Адреса">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div id="pay" class="step-tab-content">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="visa" name="method-payment" type="radio">
+                      <label class="label" for="visa">Карта Visa и MasterCard</label>
+                    </div>
+                    <div class="radio-wrap">
+                      <input class="radio" id="privat" name="method-payment" type="radio">
+                      <label class="label" for="privat">На карту Приват24</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="radio-wrap">
+                      <input class="radio" id="upon-receipt" name="method-payment" type="radio">
+                      <label class="label" for="upon-receipt">При отриманні</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <textarea name="comment" id="comment" rows="3" class="input" placeholder="Коментар до замовлення..."></textarea>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-7 -->
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="btn-buy-wrap">
+            <button type="submit" class="btn btn_black btn-buy">оформити замовлення</button>
+          </div>          
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+
+</main>
+
+
+
+
+<script>
+
+function activeStep1(){
+  $('.js-step-1').addClass('active');
+  $('.js-step-2').removeClass('active');
+  $('.checkout__step').find('input, textarea').prop('disabled', true);
+  $('.checkout__step.active').find('input, textarea').prop('disabled', false);
+};
+
+function activeStep2(){
+  $('.js-step-1').removeClass('active');
+  $('.js-step-2').addClass('active');
+  $('.checkout__step').find('input, textarea').prop('disabled', true);
+  $('.checkout__step.active').find('input, textarea').prop('disabled', false);
+  // $('.form-control-select').trigger('render');
+};
+
+
+// Кнопка "Продовжити". (Шаг 1 делаем неактивным; шаг 2 делаем активным)
+$('.js-step-1-continue').on('click', function(e){
+  e.preventDefault;
+
+  $('#name').removeClass('error');
+  $('#phone').removeClass('error');
+  if ( $('#name').val()=='' ) {
+    $('#name').addClass('error');
+  }
+  if ( $('#phone').val()=='' ) {
+    $('#phone').addClass('error');
+  }
+
+  if ( $('#name').val()=='' || $('#phone').val()=='' ) {
+    return;
+  }
+
+  activeStep2();
+});
+
+// кнопка для редактирование первого шага
+$('.js-step-1-edit').on('click', function(e){
+  e.preventDefault;
+  activeStep1();
+});
+
+
+activeStep1();
+
+
+// вкладки "Доставка" и "Оплата"
+$('.step-tabs').on('click', 'a', function(e){
+  e.preventDefault;
+  // если вкладка не активна - ничего не делаем
+  if ( ! $('.js-step-2').hasClass('active') ) {
+    return;
+  }
+
+  var tab = $(this).data('tab');
+  $('.step-tab-content').removeClass('active');
+  $('#'+tab).addClass('active');
+
+  $('.step-tabs li').removeClass('active');
+  $(this).parent().addClass('active');
+});
+
+
+// при изменении способа доставки:
+$('#delivery').on('change', '.radio', function(e){
+  // какой method-delivery выбран
+  var md = $('.radio[name=method-delivery]:checked').val();
+  // debugger;
+  console.log(md);
+  $('.delivery-content').removeClass('active');
+  $('#' + md + '-content').addClass('active');
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="display: none;">
+<!-- <div class="container"> -->
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>

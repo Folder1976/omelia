@@ -246,6 +246,14 @@ a.btn_grey {
   border: 0;
   background-color: transparent;
 }
+.remove-product {
+  span {
+    cursor: pointer;
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
 
 
 

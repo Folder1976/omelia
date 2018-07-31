@@ -33,8 +33,10 @@
     align-items: center;
     .btn { margin: 0; }
   }
-  &.detail .cart-product-list__footer {
+  &.detail .cart-product-list__footer,
+  .checkout-page & .cart-product-list__footer {
     justify-content: space-between;
+    margin-bottom: 30px;
   }
 
   .product {
