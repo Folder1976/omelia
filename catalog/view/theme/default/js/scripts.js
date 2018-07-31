@@ -351,4 +351,34 @@ $('.js-form-call-me').submit(function(e){
   return false;
 });
 
+/*************************************************************/
+// Фиксируем хедер при скролле
+var header = $('.site-header');
+$(window).scroll(function(){
+  if ( $(this).scrollTop() > 150 && header.hasClass("default") ){
+    header.removeClass("default").addClass("fixed");
+  } else if($(this).scrollTop() <= 150 && header.hasClass("fixed")) {
+    header.removeClass("fixed").addClass("default");
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

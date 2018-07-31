@@ -62,7 +62,7 @@
 <?php } ?>
 </head>
 <body class="site <?php echo $class; ?>">
-  <header class="site-header">
+  <header class="site-header default">
 
     <div class="header-top__wrap">
       <div class="container header-top">

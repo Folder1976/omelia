@@ -155,7 +155,9 @@ input:focus {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  &-header {}
+  &-header {
+    background: #fff;
+  }
   &-content {
     flex-grow: 1;
   }
@@ -1045,32 +1047,6 @@ a.btn_grey {
 
 
 
-
-
-
-
-
-
-/*********************************************/
-/*********************************************/
-/*********************************************/
-/*********************************************/
-/*********************************************/
-
-
-
-
-
-// .site-header { display: none; }
-
-// .section-home-slider { display: none; }
-// .section-home-1 { display: none; }
-// .section-novelties { display: none; }
-// .section-look-book { display: none; }
-// .section-text { display: none; }
-
-// .subscribe { display: none; }
-// .site-footer { display: none; }
 
 
 
