@@ -4,8 +4,9 @@
     <div class="row">
       <div class="bread_crumbs">
         <ul>
-          <li><a href="/">Головна</a></li>
-          <li><a href="/">Корзина</a></li>
+          <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+          <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+          <?php } ?>
         </ul>
       </div>
     </div>
