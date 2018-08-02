@@ -99,7 +99,12 @@
 
         <div class="header-top__right">
           <ul>
-            <li><a href="<?php echo $account; ?>">Вхід</a><!-- <span class="separator">|</span><?php echo $currency; ?> --><span class="separator">|</span><?php echo $language; ?></li>
+            <?php if ($logged) { ?>
+            <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a>
+            <?php } else { ?>
+            <li><a href="<?php echo $account; ?>">Вхід</a>
+            <?php } ?>
+            <span class="separator">|</span><?php echo $language; ?></li>
           </ul>
         </div>
       </div>
