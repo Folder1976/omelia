@@ -21,6 +21,7 @@ class Controlleraccountuniversalform extends Controller {
 					  'call_me__contact' => 'КОНТАКТЫ',
 					  'product_id' => 'Ид продукта',
 					  'quantity' => 'Количество',
+					  'footer-subscribe' => '',
 					  'call_me__home_slider_discount' => 'Форма из банера на главной',
 					  '' => '',
 					  '' => '',
@@ -62,6 +63,60 @@ class Controlleraccountuniversalform extends Controller {
 		
 		$mail_message = "Мы получили форму со следующими полями:\n\r";
 	
+		
+		
+		if(isset($this->request->post['formname']) AND
+				 $this->request->post['formname'] == 'footer-subscribe' AND
+					$this->request->post['email'] != '' AND
+						strpos($this->request->post['email'], '@') !== false){
+			
+			$sql = 'SELECT customer_id FROM ' . DB_PREFIX . 'customer WHERE email LIKE "'.$this->db->escape($this->request->post['email']).'" LIMIT 1';
+			$r = $this->db->query($sql);			
+			 
+			if($r->num_rows){
+				$customer_id = $r->row['customer_id'];
+			}
+			 
+			 
+			if(!isset($customer_id)){
+				$sql = 'INSERT INTO ' . DB_PREFIX . 'customer SET
+								email = "'.$this->db->escape($this->request->post['email']).'",
+								newsletter = "1",
+								firstname = "Подписка",
+								lastname = "новости",
+								status = "1",
+								store_id = "0",
+								ip = "'.$_SERVER['REMOTE_ADDR'].'",
+								language_id = "3",
+								customer_group_id = "1"
+								';
+				$this->db->query($sql);
+				$customer_id = $this->db->getLastId();
+			}else{
+				$sql = 'UPDATE ' . DB_PREFIX . 'customer SET
+								ip = "'.$_SERVER['REMOTE_ADDR'].'",
+								newsletter = "1"
+								WHERE
+								customer_id = "'.$customer_id.'"
+								';
+				
+				//die($sql);
+				$this->db->query($sql);
+				
+			}
+			
+		}
+		
+			$json['success'] = true;
+			$this->response->addHeader('Content-Type: application/json');
+			$this->response->setOutput(json_encode($json));
+			return true;
+		
+		
+		
+		
+		
+		
 		if(isset($this->request->post['option'])){
 			
 			foreach($this->request->post['option'] as $index => $value){
