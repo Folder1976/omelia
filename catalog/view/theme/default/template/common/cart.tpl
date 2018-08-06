@@ -84,12 +84,12 @@
 
         <div>
           <table class="table table-bordered">
-            <?php foreach ($totals as $total) { ?>
+            <?php //foreach ($totals as $total) { ?>
             <tr>
-              <td class="text-right"><strong><?php echo $total['title']; ?></strong></td>
-              <td class="text-right"><?php echo $total['text']; ?></td>
+              <td class="text-right"><strong><?php echo $totals[0]['title']; ?></strong></td>
+              <td class="text-right"><?php echo $totals[0]['text']; ?></td>
             </tr>
-            <?php } ?>
+            <?php //} ?>
           </table>
           
           <div class="cart-product-list__footer">

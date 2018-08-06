@@ -15,7 +15,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
           <h2><?php echo $heading_title; ?></h2>
           <?php if ($downloads) { ?>
@@ -58,7 +58,7 @@
 
         
       </div>
-      <?php echo $column_right; ?>
+      <?php // echo $column_right; ?>
     </div>
   </div>
 

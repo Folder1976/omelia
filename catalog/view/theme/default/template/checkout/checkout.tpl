@@ -56,8 +56,8 @@
               <div class="title">контактні дані</div>
               <input type="text" id="name" name="name" class="input" placeholder="Ваше імʼя">
               <input type="text" id="phone" name="phone" class="input" placeholder="Номер телефону">
-              <a href="#" class="btn btn_black checkout-btn-step-1 js-step-1-continue active-view">продовжити</a>
-              <a href="#" class="checkout-edit-step-1 active-hidden js-step-1-edit">Редагувати</a>
+              <a href="javascript:void(0)" class="btn btn_black checkout-btn-step-1 js-step-1-continue active-view">продовжити</a>
+              <a href="javascript:void(0)" class="checkout-edit-step-1 active-hidden js-step-1-edit">Редагувати</a>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@
               <div class="title">доставка і оплата</div>
               <ul class="step-tabs">
                 <li class="active"><a href="#" data-tab="delivery">Доставка</a></li>
-                <li><a href="#" data-tab="pay">Оплата</a></li>
+                <li><a href="javascript:void(0)" data-tab="pay">Оплата</a></li>
               </ul>
 
               <div id="delivery" class="step-tab-content active">

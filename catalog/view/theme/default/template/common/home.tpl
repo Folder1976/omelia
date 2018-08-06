@@ -23,6 +23,8 @@
 
 <main class="site-content">
 
+  <div class="container" id="alerts-area"></div>
+
   <section class="section-home-slider">
     <div class="home-slider owl-carousel owl-home-slider js-owl-carousel-home">
 

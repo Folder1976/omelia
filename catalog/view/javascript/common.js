@@ -290,11 +290,13 @@ var wishlist = {
 				}
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					// $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					$('#alerts-area').html('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' </div>');
 				}
 
 				$('#wishlist-total span').html(json['total']);
 				$('#wishlist-total').attr('title', json['total']);
+				$('#wishlist-total svg').addClass('svg-heart_red');
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 			},

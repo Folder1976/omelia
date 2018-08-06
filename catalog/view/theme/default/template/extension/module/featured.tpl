@@ -24,6 +24,7 @@
             <div class="item">
               <div class="product">
                 <div class="img" style="background-image: url(<?php echo $product['thumb']; ?>);">
+                  <a class="product-link" href="<?php echo $product['href']; ?>"></a>
                   <?php if(isset($product['options']['product_option_value']) AND count($product['options']['product_option_value']) > 0){?>
                     <ul class="size">
                       <?php foreach($product['options']['product_option_value'] as $option_value){ ?>
@@ -31,7 +32,7 @@
                       <?php } ?>
                     </ul>
                   <?php } ?>
-                  <div class="favorite"><a href="#"><svg class="svg-heart">
+                  <div class="favorite"><a href="javascript:void(0)" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><svg class="svg-heart">
                   <use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></a></div>
                 </div>
                 <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
@@ -265,8 +266,8 @@
     </div-->
 
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="btn-wrap">
         <a href="#" class="btn">переглянути усе <svg class="svg-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a>
       </div>
-    </div>
+    </div> -->

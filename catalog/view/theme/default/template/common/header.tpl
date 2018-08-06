@@ -154,7 +154,7 @@
 
         <div class="header__right">
           <div id="js-header-cart"><?php echo $cart;?></div>
-          <a href="<?php echo $wishlist; ?>" id="wishlist-total"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg>
+          <a href="<?php echo $wishlist; ?>" id="wishlist-total"><svg class="svg-heart <?php if ($text_wishlist>0) {echo ' svg-heart_red';} ?>"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg>
           <span class="number"><?php echo $text_wishlist; ?></span></a>
         </div>
       </div>

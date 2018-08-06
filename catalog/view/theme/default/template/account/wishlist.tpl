@@ -24,10 +24,52 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-12">
         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
           <h2><?php echo $heading_title; ?></h2>
           <?php if ($products) { ?>
+            <div class="wishlist-list">
+            <?php foreach ($products as $product) { ?>
+              <div class="product">
+                <div class="product__col-1">
+                  <div class="col-foto"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail"></a></div>
+                  <div class="col-detail">
+                    <div class="product-name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
+                    <div class="product-price"><?php if ($product['price']) { ?>
+                        <span class="price">
+                          <?php if (!$product['special']) { ?>
+                          <?php echo $product['price']; ?>
+                          <?php } else { ?>
+                          <b><?php echo $product['special']; ?></b> <s><?php echo $product['price']; ?></s>
+                          <?php } ?>
+                        </span>
+                        <?php } ?></div>
+                    <div class="field">
+                      <div class="field-name">Артикул: <?php echo $product['model']; ?></div>
+                    </div>
+
+                    <div class="field">
+                      <div class="field-name"><?php echo $column_stock; ?>: <?php echo $product['stock']; ?></div>
+                    </div>
+
+
+                    <div class="remove-product">
+                      <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');" data-toggle="tooltip" title="<?php echo $button_cart; ?>" class="btn btn-primary">Додати в кошик</button>
+                        <a href="<?php echo $product['remove']; ?>" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger">Видалити</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            <?php } ?>
+          </div>
+
+
+
+
+
+
+          <?php if (false) { ?>
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead>
@@ -65,6 +107,13 @@
               </tbody>
             </table>
           </div>
+          <?php } ?>
+
+
+
+
+
+
           <?php } else { ?>
           <p><?php echo $text_empty; ?></p>
           <?php } ?>
@@ -76,7 +125,7 @@
 
         
       </div>
-      <?php echo $column_right; ?>
+      <?php // echo $column_right; ?>
     </div>
   </div>
 

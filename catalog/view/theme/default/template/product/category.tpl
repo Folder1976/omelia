@@ -22,6 +22,8 @@
     </div>
   </div> <!-- /.content-top -->
 
+  <div class="container" id="alerts-area"></div>
+
   <?php //echo $content_top; ?>
   <div class="filter">
     <div class="container">
@@ -90,7 +92,7 @@
                 <?php } ?>
               </ul>
             <?php } ?>
-            <div class="favorite"><a href="#"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></a></div>
+            <div class="favorite"><a href="javascript:void(0)" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></a></div>
           </div>
           <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
           <div class="price">
