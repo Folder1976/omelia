@@ -44,6 +44,7 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/lib/owl.carousel.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/lib/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/lib/jquery.maskedinput.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/scripts_lib.js"></script>
 <script type="text/javascript" src="catalog/view/theme/default/js/scripts.js"></script>
 

@@ -9,7 +9,9 @@
   <div class="container">
     <div class="bread_crumbs">
       <ul>
-        <li><a href="/">Головна</a></li>
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+        <?php } ?>
       </ul>
     </div>
   </div>

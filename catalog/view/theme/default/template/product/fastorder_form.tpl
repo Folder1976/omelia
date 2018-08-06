@@ -47,7 +47,7 @@
                             <input type="text" class="form-control" id="name<?php echo $product_id;?>" name="name<?php echo $product_id;?>" placeholder="<?php echo $text_fastorder_input_name_placeholder;?>" required autofocus value="<?php if(isset($username)){echo $username;}?>">
                         </div>
                         <div class="form-group input-group-sm">
-                            <input type="tel" class="form-control" id="phone<?php echo $product_id;?>" name="phone<?php echo $product_id;?>" placeholder="<?php echo $text_fastorder_input_phone_placeholder;?>" required value="<?php if(isset($telephone)){echo $telephone;}?>">
+                            <input type="tel" class="form-control js-input-phone" id="phone<?php echo $product_id;?>" name="phone<?php echo $product_id;?>" placeholder="<?php echo $text_fastorder_input_phone_placeholder;?>" required value="<?php if(isset($telephone)){echo $telephone;}?>">
                         </div>
                     </div>
 
@@ -191,6 +191,9 @@
 </div>  <!-- .side-panel -->
 
 <script>
+    // маска для телефона
+    $(".js-input-phone").mask("+38 (099) 999-99-99");
+
     // Calc the price value
     function priceCalc(val){
         $('#total-price<?php echo $product_id;?>').text(val*<?php echo $price;?>);
@@ -254,7 +257,7 @@
             complete: function() {
                 $('#error-msg').hide();
                 $('#bs-fastorder<?php echo $product_id;?>').hide();
-                $('.js-close-fastorder').click();
+                // $('.js-close-fastorder').click();
             },
             success: function(json) {
                 $('#fastorder-success<?php echo $product_id;?>').show();
