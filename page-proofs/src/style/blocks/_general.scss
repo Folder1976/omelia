@@ -990,9 +990,15 @@ a.btn_grey {
   color: #b2b2b2;
   border-color: #b2b2b2;
   margin-bottom: 30px;
+  .checkbox + .label,
+  .radio + .label {
+    display: block;
+  }
   .checkbox + .label::after,
   .radio + .label::after {
     border: 1px solid #b2b2b2;
+    top: 50%;
+    transform: translateY(-50%);
   }
   .checkbox:checked + .label::after,
   .radio:checked + .label::after {
@@ -1095,6 +1101,33 @@ a.btn_grey {
     margin: 0;
   }
 }
+
+.checkout-auth-form-wrapper {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+.checkout-auth-form {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.submit-login-form {
+  margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

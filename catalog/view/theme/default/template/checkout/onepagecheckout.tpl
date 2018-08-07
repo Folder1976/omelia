@@ -1,4 +1,331 @@
 <?php echo $header; ?>
+<main class="site-content checkout-page" id="content">
+  <div class="container">
+    <div class="row">
+      <div class="bread_crumbs">
+        <ul>
+          <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+          <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+          <?php } ?>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <h1>оформлення замовлення</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <?php if ($error_warning) { ?>
+      <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $error_warning; ?>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      </div>
+      <?php } ?>
+    </div>
+
+    <div class="row">
+      <?php if (!$c_logged) { ?>
+        <div id="cart-auth-wrap">
+          <div class="cart-auth">Авторизуйтесь, щоб відслідкувати статус виконання покупки та зберегти її історію <a href="javascript:void(0)" class="btn btn_grey js-checkout-auth-form-toggle">Авторизуватись <svg class="svg-cart-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
+          <div class="checkout-auth-form-wrapper">
+            <form  method="post" enctype="multipart/form-data" id="LoginModal" class="checkout-auth-form">
+              <div class="form-group">
+                <div class="errors-block alert-danger"></div>
+              </div>
+              <div class="form-group">
+                <!-- <label class="control-label" for="input-email"><?php echo $entry_email; ?></label> -->
+                <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control input" />
+              </div>
+              <div class="form-group">
+                <!-- <label class="control-label" for="input-password"><?php echo $entry_password; ?></label> -->
+                <input type="password" name="password" value="" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control input" />
+                <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a></div>
+              <div class="btn btn-primary submit-login-form" ><?php echo $button_login; ?></div>
+              <div>
+                <a href="<?php echo $register ?>"> <?=$text_register;?></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
+
+    <div class="row">
+      <div class="checkout__top">
+        <div class="row">
+          <div class="col-12">
+            <a href="/index.php?route=checkout/cart" class="go-back"><svg class="svg-cart-left-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow"></use></svg> Повернутись до корзини</a>
+
+            <div class="checkout__total-sum-header">Загальна сума: <span><?php echo $totals[0]['text']; ?></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout__steps">
+    <form action="">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="checkout__step js-step-1">
+            <div class="checkout__step-number">1</div>
+            <div class="checkout__step-content">
+              <div class="title">контактні дані</div>
+              <input type="text" id="firstname-ch" value="" name="firstname" class="input" placeholder="Ваше імʼя">
+              <div class="error alert-danger"></div>
+              <input type="text" id="telephone-ch" value="" name="telephone" class="input js-input-phone" placeholder="Номер телефону">
+              <div class="error alert-danger"></div>
+              <a href="javascript:void(0)" class="btn btn_black checkout-btn-step-1 js-step-1-continue active-view">продовжити</a>
+              <a href="javascript:void(0)" class="checkout-edit-step-1 active-hidden js-step-1-edit">Редагувати</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-5 -->
+        <div class="col-lg-7">
+          <div class="checkout__step js-step-2">
+            <div class="checkout__step-number">2</div>
+            <div class="checkout__step-content">
+              <div class="title">доставка і оплата</div>
+              <ul class="step-tabs">
+                <li class="active"><a href="javascript:void(0)" data-tab="delivery">Доставка</a></li>
+                <li><a href="javascript:void(0)" data-tab="pay">Оплата</a></li>
+              </ul>
+
+              <div id="delivery" class="step-tab-content active">
+                <div class="row">
+                  <?php foreach ($shippig_methods as $shipping_method) { ?>
+                    <div class="col-md-6">
+                      <div class="radio-wrap">
+                        <input class="radio <?= substr($shipping_method['value'], strpos($shipping_method['value'], '.')+1 )?>" id="delivery-self" name="method-delivery" type="radio" value='{"title": "<?php echo $shipping_method['title'] ?>", "code": "<?php echo $shipping_method['value'] ?>", "comment":"", "shipping_method":"<?php echo $shipping_method['value'] ?>", "cost":"<?php echo $shipping_method['cost'] ?>","tax_class_id":""}'>
+                        <label class="label" for="delivery-self"><?php echo $shipping_method['title'] ?></label>
+                      </div>
+                    </div>
+                  <?php } ?>
+                </div>
+                <div class="row">
+                  <div class="col">
+
+                    <div id="delivery-self-content" class="delivery-content active">
+                      <div class="title">Наша адреса:</div>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <p>м. Київ<br>вул. Чорновола, 56</p>
+                          <p>ПН - СБ: 10 - 17 <br>НД: вихідний</p>
+                        </div>
+                        <div class="col-md-4">
+                          <p><a href="tel:+380971101107">+38 097 11 01 107</a></p>
+                          <p><a href="tel:+380971101107">+38 097 11 01 107</a></p>
+                          <p><a href="" style="text-decoration: underline;">Зателефонувати мені</a></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-privat-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="privat-region" id="privat-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="privat-sity" id="privat-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="privat-department" id="privat-department" class="form-control form-control-select" placeholder="Відділення">
+                            <option value="1">Відділення 1</option>
+                            <option value="2">Відділення 2</option>
+                            <option value="3">Відділення 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-nova-post-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="nova-post-region" id="nova-post-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="nova-post-sity" id="nova-post-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <select name="nova-post-department" id="nova-post-department" class="form-control form-control-select" placeholder="Відділення">
+                            <option value="1">Відділення 1</option>
+                            <option value="2">Відділення 2</option>
+                            <option value="3">Відділення 3</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="delivery-courier-content" class="delivery-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <select name="courier-region" id="courier-region" class="form-control form-control-select" placeholder="Область">
+                            <option value="1">Область 1</option>
+                            <option value="2">Область 2</option>
+                            <option value="3">Область 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <select name="courier-sity" id="courier-sity" class="form-control form-control-select" placeholder="Місто">
+                            <option value="1">Місто 1</option>
+                            <option value="2">Місто 2</option>
+                            <option value="3">Місто 3</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <input type="text" name="courier-department" id="courier-department" class="input" placeholder="Адреса">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <div id="pay" class="step-tab-content">
+                <div class="row">
+                  <?php foreach ($payment_methods as $payment_method) { ?>
+                    <div class="col-md-6">
+                      <div class="radio-wrap">
+                        <input class="radio <?php echo $payment_method['code']?>" id="payment-method-<?php echo $payment_method['code']?>" name="method-payment" type="radio" value='{"title": "<?php echo $payment_method['title'] ?>", "code": "<?php echo $payment_method['code'] ?>"}'>
+                        <label class="label" for="payment-method-<?php echo $payment_method['code']?>"><?php echo $payment_method['title'] ?></label>
+                      </div>
+                    </div>
+                  <?php } ?>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <textarea name="comment" id="comment" rows="3" class="input" placeholder="Коментар до замовлення..."></textarea>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-7 -->
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="btn-buy-wrap">
+            <a href="javascript:void(0)" id="ajax-button-confirm" class="btn btn_black btn-buy">оформити замовлення</a>
+          </div>          
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</main>
+
+
+
+<script>
+$('.js-checkout-auth-form-toggle').on('click', function(){
+  $('.checkout-auth-form-wrapper').toggleClass('open');
+});
+
+
+function activeStep1(){
+  $('.js-step-1').addClass('active');
+  $('.js-step-2').removeClass('active');
+  $('.checkout__step').find('input, textarea').prop('disabled', true);
+  $('.checkout__step.active').find('input, textarea').prop('disabled', false);
+};
+
+function activeStep2(){
+  $('.js-step-1').removeClass('active');
+  $('.js-step-2').addClass('active');
+  $('.checkout__step').find('input, textarea').prop('disabled', true);
+  $('.checkout__step.active').find('input, textarea').prop('disabled', false);
+  // $('.form-control-select').trigger('render');
+};
+
+
+// Кнопка "Продовжити". (Шаг 1 делаем неактивным; шаг 2 делаем активным)
+$('.js-step-1-continue').on('click', function(e){
+  e.preventDefault;
+
+  $('#name').removeClass('error');
+  $('#phone').removeClass('error');
+  if ( $('#name').val()=='' ) {
+    $('#name').addClass('error');
+  }
+  if ( $('#phone').val()=='' ) {
+    $('#phone').addClass('error');
+  }
+
+  if ( $('#name').val()=='' || $('#phone').val()=='' ) {
+    return;
+  }
+
+  activeStep2();
+});
+
+// кнопка для редактирование первого шага
+$('.js-step-1-edit').on('click', function(e){
+  e.preventDefault;
+  activeStep1();
+});
+
+
+activeStep1();
+
+
+// вкладки "Доставка" и "Оплата"
+$('.step-tabs').on('click', 'a', function(e){
+  e.preventDefault;
+  // если вкладка не активна - ничего не делаем
+  if ( ! $('.js-step-2').hasClass('active') ) {
+    return;
+  }
+
+  var tab = $(this).data('tab');
+  $('.step-tab-content').removeClass('active');
+  $('#'+tab).addClass('active');
+
+  $('.step-tabs li').removeClass('active');
+  $(this).parent().addClass('active');
+});
+
+
+// при изменении способа доставки:
+$('#delivery').on('change', '.radio', function(e){
+  // какой method-delivery выбран
+  var md = $('.radio[name=method-delivery]:checked').val();
+  $('.delivery-content').removeClass('active');
+  $('#' + md + '-content').addClass('active');
+});
+
+</script>
+
+
+
+
+
+
+<!-- /****************************************/ -->
+
+
+<?php if (false) { ?>
 <div class="container">
 <ul class="breadcrumb">
 <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -241,8 +568,11 @@
                         </div>
                     </div>
     <div class="hiden_payment_info"  style="display:none;"></div>
+<?php } ?>
 
-    <script type="text/javascript"><!--
+
+
+<script type="text/javascript"><!--
 
 function updateShipping(s) {
     shp = JSON.parse(s.value)
@@ -313,8 +643,9 @@ $(document).ready(function () {
                        $('#address_1').prop('value',json.address_1);
                        $('#email-ch').prop('value',json.email);
                        $('#telephone-ch').prop('value',json.telephone);
-                       $('#LoginModal').modal('hide');
+                       // $('#LoginModal').modal('hide');
                        $('#login_warning').html('');
+                       $('#cart-auth-wrap').html('');
                    }
                 },
                 error: function(xhr, ajaxOptions, thrownError) {
@@ -330,7 +661,7 @@ $(document).ready(function () {
 $.ajax({
 url: 'index.php?route=checkout/onepagecheckout',
 type: 'post',
-data: $('.checkout-checkout .payment-data input[type=\'text\'], .checkout-checkout .payment-data input[type=\'tel\'], .checkout-checkout .payment-data input[type=\'radio\']:checked, .checkout-checkout .payment-datainput input[type=\'checkbox\']:checked, .checkout-checkout .payment-data  select '),
+data: $('input[type=\'text\'], input[type=\'tel\'], input[type=\'radio\']:checked, input[type=\'checkbox\']:checked, select '),
 dataType: 'json',
 beforeSend: function () {
 $('#ajax-button-confirm').addClass('preloader');
