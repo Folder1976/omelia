@@ -308,8 +308,6 @@ $('.step-tabs').on('click', 'a', function(e){
 $('#delivery').on('change', '.radio', function(e){
   // какой method-delivery выбран
   var md = $('.radio[name=method-delivery]:checked').val();
-  // debugger;
-  console.log(md);
   $('.delivery-content').removeClass('active');
   $('#' + md + '-content').addClass('active');
 });
@@ -341,7 +339,7 @@ $('#delivery').on('change', '.radio', function(e){
 
 
 
-
+<?php if (false) { ?>
 <div class="container" style="display: none;">
 <!-- <div class="container"> -->
   <ul class="breadcrumb">
@@ -430,6 +428,20 @@ $('#delivery').on('change', '.radio', function(e){
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script type="text/javascript"><!--
 $(document).on('change', 'input[name=\'account\']', function() {
 	if ($('#collapse-payment-address').parent().find('.panel-heading .panel-title > *').is('a')) {

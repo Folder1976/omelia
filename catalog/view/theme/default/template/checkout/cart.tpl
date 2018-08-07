@@ -230,7 +230,7 @@ $('.js-btnproduct-plus').on('click', function(e){
 
 
 
-
+<?php if (false) { ?>
 <div class="container" style="display: none;">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -361,4 +361,14 @@ $('.js-btnproduct-plus').on('click', function(e){
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<?php } ?>
+
+
+
+
+
+
+
+
+
 <?php echo $footer; ?>

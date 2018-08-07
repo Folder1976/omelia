@@ -39,9 +39,6 @@
                 
                 <?php if ($product['option']) { ?>
                 <?php foreach ($product['option'] as $option) { ?>
-                  <!-- <pre>
-                  <?php var_dump($option); ?>
-                  </pre> -->
                   <div class="field">
                     <div class="field-name"><?php echo $option['name']; ?>: <?php echo $option['value']; ?></div>
                   </div>

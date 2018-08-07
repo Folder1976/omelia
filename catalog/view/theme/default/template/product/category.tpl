@@ -139,7 +139,7 @@
 
 
 
-
+<?php if (false) { ?>
 <div class="container" style="display: none;">
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
@@ -287,7 +287,7 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
-
+<?php } ?>
 
 
 

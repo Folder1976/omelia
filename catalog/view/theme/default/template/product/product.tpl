@@ -1,10 +1,5 @@
 <?php echo $header; ?>
 
-<pre>
-<?php
-// var_dump(get_defined_vars());
-?>
-</pre>
 <main class="site-content product-page" id="content">
   <div class="container">
     <div class="bread_crumbs">
@@ -362,7 +357,7 @@ $('.js-show-all-thumbnails').on('click', function() {
 
 
 
-
+<?php if (false) { ?>
 <div class="container" style="display: none;">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -757,6 +752,11 @@ $('.js-show-all-thumbnails').on('click', function() {
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+<?php } ?>
+
+
+
+
 <script type="text/javascript"><!--
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({

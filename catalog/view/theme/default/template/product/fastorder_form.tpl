@@ -65,22 +65,23 @@
                     <button type="submit" id="btn_submit<?php echo $product_id;?>" class="btn btn_black btn-buy"><?php echo $text_fastorder_button_submit;?></button>
 
 
+                </div>
 
 
 
 
+            </div>
 
-
-
+        </div>
+    </div>
+</div>
 
 
 
 
 
 <?php // можно удалять: start ?>
-
-
-
+<?php if (false) { ?>
 
                     <fieldset style="display: none;">
                         <?php //echo $text_fastorder_form_info;?>
@@ -148,10 +149,7 @@
                 </span> -->
             </div>
 
-
-
-
-
+<?php } ?>
 <?php // можно удалять: end ?>
 
 
@@ -167,26 +165,24 @@
 
 
 
-        </div>
-    </div>
-</div>
 
-<!-- Modal fastorder success -->
-<div class="modal fade modal-fastorder-success" id="fastorder-success<?php echo $product_id;?>" tabindex="-1" role="dialog" style="display: none;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="title"><?php echo $text_fastorder_success_title;?></h4>
-            </div>
-            <div class="modal-body">
-                <?php echo $text_fastorder_success_message;?>
-            </div>
-            <div class="modal-footer" style="text-align: center;">
-                <button type="button"  class="btn btn-default btn-success js-close-fastorder" data-dismiss="modal"><?php echo $text_fastorder_button_close;?></button>
+
+    <!-- Modal fastorder success -->
+    <div class="modal fade modal-fastorder-success" id="fastorder-success<?php echo $product_id;?>" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title"><?php echo $text_fastorder_success_title;?></h4>
+                </div>
+                <div class="modal-body">
+                    <?php echo $text_fastorder_success_message;?>
+                </div>
+                <div class="modal-footer" style="text-align: center;">
+                    <button type="button"  class="btn btn-default btn-success js-close-fastorder" data-dismiss="modal"><?php echo $text_fastorder_button_close;?></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </div>  <!-- .side-panel -->
 
