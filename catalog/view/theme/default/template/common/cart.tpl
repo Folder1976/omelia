@@ -63,8 +63,8 @@
                 <div class="field product-count">
                     <div class="field-name">Кількість: <span class="js-product-count"><?php echo $product['quantity']; ?></span> шт</div>
                     <input type="hidden" value="1" onchange="priceCalc(this.value)" id="count<?php echo $product_id;?>" name="quantity[<?php echo $product['cart_id']; ?>]">
-                    <button class="product-count__btn js-btnproduct-minus" data-id="<?php echo $product['cart_id']; ?>">-</button>
-                    <button class="product-count__btn js-btnproduct-plus" data-id="<?php echo $product['cart_id']; ?>">+</button>
+                    <!-- <button class="product-count__btn js-btnproduct-minus" data-id="<?php echo $product['cart_id']; ?>">-</button>
+                    <button class="product-count__btn js-btnproduct-plus" data-id="<?php echo $product['cart_id']; ?>">+</button> -->
                 </div>
 
                 <div class="remove-product">
