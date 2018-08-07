@@ -111,7 +111,7 @@
                         <button class="product-count__btn js-btnproduct-plus" data-id="<?php echo $product['cart_id']; ?>">+</button>
                     </div>
 
-                    <div class="remove-product mini-cart-hidden">
+                    <div class="remove-product">
                       <span onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><svg class="svg-remove"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#close"></use></svg>Видалити</span>
                     </div>
 

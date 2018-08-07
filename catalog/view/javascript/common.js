@@ -218,19 +218,27 @@ var cart = {
 				$('#cart > button').button('reset');
 			},
 			success: function(json) {
-				// Need to set timeout otherwise it wont update the total
-				setTimeout(function () {
-					// $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-					$('#cart > button').html('<span class="d-none d-sm-inline">Корзина </span><svg class="svg-shopping-cart d-inline d-sm-none"><use xlink:href="img/sprite/svgSprite.svg#shopping-cart"></use></svg><span class="number" id="cart-total">' + json['total'] + '</span>');
-				}, 100);
-				
-				var now_location = String(document.location.pathname);
+				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				if ((now_location == '/cart/') || (now_location == '/checkout/') || (getURLVar('route') == 'checkout/cart') || (getURLVar('route') == 'checkout/checkout')) {
-					location = 'index.php?route=checkout/cart';
-				} else {
-					$('#cart > ul').load('index.php?route=common/cart/info ul li');
-				}
+				$('#cart-total').html('' + json['total'] + '');
+        $('.js-cart-total').html('' + json['total'] + '');
+
+        $('#mini-cart').load('index.php?route=common/cart/info #mini-cart > div');
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+				// // Need to set timeout otherwise it wont update the total
+				// setTimeout(function () {
+				// 	// $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+				// 	$('#cart > button').html('<span class="d-none d-sm-inline">Корзина </span><svg class="svg-shopping-cart d-inline d-sm-none"><use xlink:href="img/sprite/svgSprite.svg#shopping-cart"></use></svg><span class="number" id="cart-total">' + json['total'] + '</span>');
+				// }, 100);
+				
+				// var now_location = String(document.location.pathname);
+
+				// if ((now_location == '/cart/') || (now_location == '/checkout/') || (getURLVar('route') == 'checkout/cart') || (getURLVar('route') == 'checkout/checkout')) {
+				// 	location = 'index.php?route=checkout/cart';
+				// } else {
+				// 	$('#cart > ul').load('index.php?route=common/cart/info ul li');
+				// }
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
 				alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
