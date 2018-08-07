@@ -210,7 +210,7 @@
 
         <input type="hidden" name="quantity" value="<?php echo $minimum; ?>" size="2" id="input-quantity" class="form-control" />
         <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
-        <br />
+
         <!--button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary btn-lg btn-block"><?php echo $button_cart; ?></button-->
 
         <button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_black btn-buy">додати в кошик</button>
