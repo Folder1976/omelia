@@ -5,7 +5,7 @@
     <div class="close-btn js-close-mini-cart"><svg class="svg-close"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#close"></use></svg></div>
 
     <div class="side-panel__header">
-      <h3 class="title">корзина (<span class="js-cart-total"><?php echo $text_items; ?></span>)  <span class="cart-detail-btn js-open-detail-cart detail-hidden"><svg class="svg-cart-left-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow"></use></svg> Детальніше</span><div class="total-summ-header mini-cart-hidden iblock">Загальна сума: <span class="js-cart-total">UAH 3 330</span></div></h3>
+      <h3 class="title">корзина (<span class="js-cart-total"><?php echo $text_items; ?></span>)  <span style="display: none" class="cart-detail-btn js-open-detail-cart detail-hidden"><svg class="svg-cart-left-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#left-arrow"></use></svg> Детальніше</span><div class="total-summ-header mini-cart-hidden iblock">Загальна сума: <span class="js-cart-total">UAH 3 330</span></div></h3>
 
       <div class="cart-auth mini-cart-hidden">Авторизуйтесь, щоб відслідкувати статус виконання покупки та зберегти її історію <a href="#" class="btn btn_grey">Авторизуватись <svg class="svg-cart-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
 

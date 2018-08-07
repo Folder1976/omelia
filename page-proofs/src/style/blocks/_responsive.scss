@@ -285,9 +285,19 @@
     width: 99%;
   }
 
+  .side-panel .product__col-1 {
+    flex-wrap: wrap;
+  }
   .mini-cart,
   .fastorder-form {
     padding-right: 20px;
+    &.open {
+      left: 0;
+    }
+  }
+
+  .wishlist-list .product__col-1 {
+    flex-wrap: wrap;
   }
 
   .header-mob-menu {

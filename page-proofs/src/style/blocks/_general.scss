@@ -29,6 +29,7 @@ body {
   &.mob-menu-is-open,
   &.mini-cart-is-open,
   &.fastorder-is-open {
+    overflow: hidden;
     &:before {
       opacity: .5;
       z-index: 100;
@@ -977,6 +978,7 @@ a.btn_grey {
 }
 .checkout__top {
   margin-top: 55px;
+  width: 100%;
 }
 
 
