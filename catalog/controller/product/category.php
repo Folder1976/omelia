@@ -6,6 +6,7 @@ class ControllerProductCategory extends Controller {
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');
+		$this->load->model('catalog/manufacturer');
 
 		$this->load->model('tool/image');
 
@@ -155,6 +156,25 @@ class ControllerProductCategory extends Controller {
 				$url .= '&order=' . $this->request->get['order'];
 			}
 
+			if (isset($this->request->get['order'])) {
+				$url .= '&manufacturer_id=' . $this->request->get['manufacturer_id'];
+			}
+
+			if (isset($this->request->get['filter_color'])) {
+				$this->request->get['filter_color'] = urldecode($this->request->get['filter_color']);
+				$url .= '&filter_color=' . $this->request->get['filter_color'];
+			}
+
+			if (isset($this->request->get['filter_size'])) {
+				$this->request->get['filter_size'] = urldecode($this->request->get['filter_size']);
+				$url .= '&filter_size=' . $this->request->get['filter_size'];
+			}
+
+			if (isset($this->request->get['filter_price'])) {
+				$this->request->get['filter_price'] = urldecode($this->request->get['filter_price']);
+				$url .= '&filter_price=' . $this->request->get['filter_price'];
+			}
+
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
@@ -186,9 +206,87 @@ class ControllerProductCategory extends Controller {
 				'limit'              => $limit
 			);
 
-			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+			//$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+			
+			$products = $this->model_catalog_product->getTotalProductIds($filter_data);
 
-			$results = $this->model_catalog_product->getProducts($filter_data);
+			$product_ids = array(); //Тут отфильтрованные ИД продукта
+			$product_array = array(); //Тут все по продуктам отфильтрованное
+			$filter_manufactures = array();
+			$filter_attributes = array();
+			$black_list = array();
+			
+			
+			//Бренды
+			foreach($products as $index => $row){
+				
+				$filter_manufactures[$row['manufacturer_id']] = array();
+				
+				$attributes = array();
+				$attributes = explode(';', $row['text']);
+				foreach($attributes as $a_id => $a_text){
+					$a_text = mb_strtolower(trim($a_text));
+					$attributes[$a_id] = $a_text;
+					$filter_attributes[$row['attribute_id']][$a_text] = $a_text;
+				}
+			
+			
+			
+				if(isset($this->request->get['manufacturer_id']) AND (int)$this->request->get['manufacturer_id'] > 0){
+					if((int)$this->request->get['manufacturer_id'] != $row['manufacturer_id']){
+						$black_list[(int)$row['product_id']] = (int)$row['product_id'];
+						continue;
+					}
+				}
+					
+			
+				if(!in_array((int)$row['product_id'], $black_list)){
+					
+					
+					if($row['attribute_id'] == 12 AND isset($this->request->get['filter_color']) AND $this->request->get['filter_color'] != ''){
+						if(!in_array($this->request->get['filter_color'], $attributes)){
+							$black_list[(int)$row['product_id']] = (int)$row['product_id'];
+							continue;
+						}
+					}
+					
+					if($row['attribute_id'] == 13 AND isset($this->request->get['filter_size']) AND $this->request->get['filter_size'] != ''){
+						if(!in_array($this->request->get['filter_size'], $attributes)){
+							$black_list[(int)$row['product_id']] = (int)$row['product_id'];
+							continue;
+						}
+					}
+				
+					if($row['attribute_id'] == 14 AND isset($this->request->get['filter_price']) AND $this->request->get['filter_price'] != ''){
+						if(!in_array($this->request->get['filter_price'], $attributes)){
+							
+							$black_list[(int)$row['product_id']] = (int)$row['product_id'];
+							continue;
+						}
+					}
+					
+					$product_array[$index] = $row;
+					$product_ids[$row['product_id']] = $row['product_id'];
+
+				}
+			}
+		
+			foreach($black_list as $prod_id){
+				unset($product_ids[$prod_id]);
+			}
+		
+		
+		
+			foreach($filter_manufactures as $manufacturer_id => $row){
+				$filter_manufactures[$manufacturer_id] = $this->model_catalog_manufacturer->getManufacturer($manufacturer_id);
+			}
+		
+			$product_total = count($product_ids);
+			$data['filter_manufactures'] = $filter_manufactures;
+			$data['filter_attributes'] = $filter_attributes;
+		
+			
+			$results = $this->model_catalog_product->getProducts($filter_data, $product_ids);
 
 			foreach ($results as $result) {
 				if ($result['image']) {

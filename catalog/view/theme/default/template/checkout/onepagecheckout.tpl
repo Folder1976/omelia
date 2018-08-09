@@ -722,8 +722,8 @@ else if(json['payment']) {
 else {
     if (json.credit)
         credit_confirm('/index.php?route=checkout/part_payment_cart/getResult&from_privat24=true');
-   /* else
-        location = 'index.php?route=checkout/success'*/
+    else
+        location = 'index.php?route=checkout/success';
 
 }
 },

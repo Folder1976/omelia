@@ -37,7 +37,9 @@ class ControllerCommonHome extends Controller {
 		$headers[2][32] = 'Top sale';
 		$headers[2][34] = '';
 
-		
+		$this->load->model('catalog/page');
+		$data['pages'] = $this->model_catalog_page->getPages();
+	
 		foreach ($modules as $module) {
 			$part = explode('.', $module['code']);
 

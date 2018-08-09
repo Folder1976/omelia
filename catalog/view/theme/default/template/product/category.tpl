@@ -21,6 +21,38 @@
       </div>
     </div>
   </div> <!-- /.content-top -->
+  
+  <script>
+    //$(document).on('change', '#filter_manufacturer', function(){
+    function filter(){   
+        
+        var url = '';
+        var route = '<?php echo $_SERVER['REDIRECT_URL'];?>';
+        
+        var manufacturer_id = $('#filter_manufacturer').val();
+        if(manufacturer_id > 0) url = url + 'manufacturer_id='+manufacturer_id+'&';
+      
+        var filter_color = $('#filter_color').val();
+        if(filter_color != 0) url = url + 'filter_color='+filter_color+'&';
+       
+        var filter_size = $('#filter_size').val();
+        if(filter_size != 0) url = url + 'filter_size='+filter_size+'&';
+       
+        var filter_price = $('#filter_price').val();
+        if(filter_price != 0) url = url + 'filter_price='+filter_price+'&';
+       
+        
+        
+        if(url.length > 1){
+          url = url.substring(0, url.length - 1);
+          document.location.href = route+'?'+url;  
+        }else{
+          document.location.href = route;  
+        }
+        
+    }//);
+  </script>
+  
 
   <div class="container" id="alerts-area"></div>
 
@@ -31,32 +63,40 @@
         <div class="col-lg-9">
           <div class="filrer-inner">
 
-            <select class="form-control form-control-select" name="" id="">
-              <option value="0" selected="selected">бренд</option>
-              <option value="1">option 1</option>
-              <option value="2">option 2</option>
-              <option value="3">option 3</option>
+            <select class="form-control form-control-select" name="filter_manufacturer" id="filter_manufacturer" onChange="filter()">
+              <option value="0" <?php if(!isset($_GET['filter_color']) OR (isset($_GET['manufacturer_id']) AND $_GET['manufacturer_id'] == '0')) echo 'selected'; ?>>бренд</option>
+              <?php if(isset($filter_manufactures)){ ?>
+                <?php foreach($filter_manufactures as $manufacturer_id => $manufacturer){ ?>
+                  <option <?php if(isset($_GET['manufacturer_id']) AND $_GET['manufacturer_id'] == $manufacturer_id) echo 'selected'; ?> value="<?php echo $manufacturer_id; ?>"><?php echo $manufacturer['name'];?></option>
+                <?php } ?>
+              <?php } ?>
             </select>
 
-            <select class="form-control form-control-select" name="" id="">
-              <option value="0" selected="selected">колір</option>
-              <option value="1">option 1</option>
-              <option value="2">option 2</option>
-              <option value="3">option 3</option>
+            <select class="form-control form-control-select" name="filter_color" id="filter_color" onChange="filter()">
+              <option value="0" <?php if(!isset($_GET['filter_color']) OR (isset($_GET['filter_color']) AND $_GET['filter_color'] == '0')) echo 'selected'; ?>>колір</option>
+              <?php if(isset($filter_attributes[12])){ ?>
+                <?php foreach($filter_attributes[12] as $attribute){ ?>
+                  <option <?php if(isset($_GET['filter_color']) AND $_GET['filter_color'] == $attribute) echo 'selected'; ?> value="<?php echo $attribute; ?>"><?php echo $attribute;?></option>
+                <?php } ?>
+              <?php } ?>
             </select>
 
-            <select class="form-control form-control-select" name="" id="">
-              <option value="0" selected="selected">розмір</option>
-              <option value="1">option 1</option>
-              <option value="2">option 2</option>
-              <option value="3">option 3</option>
+            <select class="form-control form-control-select" name="filter_size" id="filter_size" onChange="filter()">
+              <option value="0" <?php if(!isset($_GET['filter_size']) OR (isset($_GET['filter_size']) AND $_GET['filter_size'] == '0')) echo 'selected'; ?>>розмір</option>
+               <?php if(isset($filter_attributes[13])){ ?>
+                <?php foreach($filter_attributes[13] as $attribute){ ?>
+                  <option <?php if(isset($_GET['filter_size']) AND $_GET['filter_size'] == $attribute) echo 'selected'; ?> value="<?php echo $attribute; ?>"><?php echo $attribute;?></option>
+                <?php } ?>
+              <?php } ?>
             </select>
 
-            <select class="form-control form-control-select" name="" id="">
-              <option value="0" selected="selected">ціна</option>
-              <option value="1">option 1</option>
-              <option value="2">option 2</option>
-              <option value="3">option 3</option>
+            <select class="form-control form-control-select" name="filter_price" id="filter_price" onChange="filter()">
+              <option value="0" <?php if(!isset($_GET['filter_price']) OR (isset($_GET['filter_price']) AND $_GET['filter_price'] == '0')) echo 'selected'; ?>>ціна</option>
+                 <?php if(isset($filter_attributes[14])){ ?>
+                <?php foreach($filter_attributes[14] as $attribute){ ?>
+                  <option <?php if(isset($_GET['filter_price']) AND $_GET['filter_price'] == $attribute) echo 'selected'; ?> value="<?php echo $attribute; ?>"><?php echo $attribute;?></option>
+                <?php } ?>
+              <?php } ?>
             </select>
 
           </div>

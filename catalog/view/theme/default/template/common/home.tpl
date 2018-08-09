@@ -60,15 +60,20 @@
   <section class="section-home-1">
     <div class="container">
       <div class="block__wrap">
-        <div class="block">
-          <div class="block__text">
-            <div class="block__title"><?php echo $lib['життя в тренді'];?></div>
-            <div class="block__desc"><?php echo $lib['Повсякденний одяг та аксесуари для молодих людей у стилі вуличної моди за доступними цінами'];?></div>
-          </div>
-          <div class="block__img"><img src="catalog/view/theme/default/img/home/image-1.jpg" alt=""></div>
-        </div>
-
-        <div class="block">
+        
+        <?php foreach($pages as $page){ ?>
+        
+            <div class="block">
+              <div class="block__text">
+                <div class="block__title"><?php echo $page['name']; ?></div>
+                <div class="block__desc"><?php echo htmlspecialchars_decode($page['description'], ENT_QUOTES); ?></div>
+              </div>
+              <div class="block__img"><a href="<?php echo $page['url']; ?>"><img src="/image/<?php echo $page['image']; ?>" alt="Картинка <?php echo $page['name']; ?>"></a></div>
+            </div>
+        
+        <?php } ?>
+        
+        <!--div class="block">
           <div class="block__text">
             <div class="block__title"><?php echo $lib['Стиль та комфорт'];?></div>
             <div class="block__desc"><?php echo $lib["Високоякісна зручний одяг, що складається з дуже м'яких матеріалів, випадкових стилів та різнобарвних кольорів"];?></div>
@@ -82,7 +87,7 @@
             <div class="block__desc"><?php echo $lib['Яскраві образи, якісний одяг і стильні новинки європейського бренду з доставкою по всій Україні'];?></div>
           </div>
           <div class="block__img"><img src="catalog/view/theme/default/img/home/image-3.jpg" alt=""></div>
-        </div>
+        </div-->
       </div>
     </div>
   </section>
