@@ -39,12 +39,23 @@
         </div>
       </div>
 
-      <div class="item">
+<!--       <div class="item">
         <div class="bg-img" style="background-image: url(catalog/view/theme/default/img/home-slider/bg-1.jpg);"></div>
         <div class="foto" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutRight"><img src="catalog/view/theme/default/img/home-slider/slide-2.jpg" alt=""></div>
         <div class="text">
           <div class="brand" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown"><img src="catalog/view/theme/default/img/brand/juvia.png" alt=""></div>
           <div class="title" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown">Знижки до  60% OFF</div>
+          <div class="sub-title" data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutLeft">на колекцію весна-літо 2018</div>
+          <div class="btn-wrap" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutUp"><a href="#" class="btn">розпочати шопінг <svg class="svg-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
+        </div>
+      </div>
+ -->
+      <div class="item">
+        <div class="bg-img" style="background-image: url(catalog/view/theme/default/img/home-slider/bg-2.jpg);"></div>
+        <div class="foto" data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutRight"><img src="catalog/view/theme/default/img/home-slider/slide-4.jpg" alt=""></div>
+        <div class="text">
+          <div class="brand" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown"><img src="catalog/view/theme/default/img/brand/rocco-ragni.png" alt=""></div>
+          <div class="title" data-animation-in="fadeInDown" data-animation-out="animate-out fadeOutDown">Знижки до  50% OFF</div>
           <div class="sub-title" data-animation-in="fadeInLeft" data-animation-out="animate-out fadeOutLeft">на колекцію весна-літо 2018</div>
           <div class="btn-wrap" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutUp"><a href="#" class="btn">розпочати шопінг <svg class="svg-right-arrow"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#right-arrow"></use></svg></a></div>
         </div>
