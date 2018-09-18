@@ -26,7 +26,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-          <h2><?php echo $text_my_account; ?></h2>
+          <h3><?php echo $text_my_account; ?></h3>
           <ul class="list-unstyled">
             <li><a href="<?php echo $edit; ?>"><?php echo $text_edit; ?></a></li>
             <li><a href="<?php echo $password; ?>"><?php echo $text_password; ?></a></li>
@@ -34,14 +34,14 @@
             <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
           </ul>
           <?php if ($credit_cards) { ?>
-          <h2><?php echo $text_credit_card; ?></h2>
+          <h3><?php echo $text_credit_card; ?></h3>
           <ul class="list-unstyled">
             <?php foreach ($credit_cards as $credit_card) { ?>
             <li><a href="<?php echo $credit_card['href']; ?>"><?php echo $credit_card['name']; ?></a></li>
             <?php } ?>
           </ul>
           <?php } ?>
-          <h2><?php echo $text_my_orders; ?></h2>
+          <h3><?php echo $text_my_orders; ?></h3>
           <ul class="list-unstyled">
             <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
             <!-- <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li> -->
@@ -52,11 +52,11 @@
             <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
             <!-- <li><a href="<?php echo $recurring; ?>"><?php echo $text_recurring; ?></a></li> -->
           </ul>
-          <h2><?php echo $text_my_newsletter; ?></h2>
+          <h3><?php echo $text_my_newsletter; ?></h3>
           <ul class="list-unstyled">
             <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
           </ul>
-          <h2>Вихід</h2>
+          <h3>Вихід</h3>
           <ul class="list-unstyled">
             <li><a href="/index.php?route=account/logout">Вихід</a></li>
           </ul>

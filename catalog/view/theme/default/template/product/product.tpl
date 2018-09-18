@@ -69,7 +69,7 @@
           <div class="col product-detail_col-right">
             <div class="model">Артикул: <?php echo $model; ?></div>
             <!--button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button-->
-            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add('<?php echo $product_id; ?>');" data-original-title="В закладки"><svg class="svg-heart-big"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
+            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add('<?php echo $product_id; ?>');" data-original-title="В закладки"><svg class="svg-favorite-heart <?php if($wishlist){echo 'is-active';} ?>"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#favorite-heart"></use></svg></button>
           </div>
         </div>
 

@@ -26,6 +26,19 @@
 }
 
 
+.svg-favorite-heart {
+  width: 26px;
+  height: 24px;
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 4%;
+
+  &.is-active {
+    fill: #000;
+  }
+}
+
+
 .svg-shopping-cart {
   width: 20px;
   height: 20px;
