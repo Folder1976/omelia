@@ -1,21 +1,4 @@
-<?php echo $header;
-
-  $lands = array(
-                'ще' => 'more',
-                'Відкрити таблицю розмірів' => 'Open size table',
-                'Переглянути таблицю розмірів' => 'Open size table',
-                'В закладки' => 'wishlist',
-                '' => '',
-                '' => '',
-                '' => '',
-                '' => '',
-                );
-  $lib = array();foreach($lands as $ru => $ua){if((int)$language_id == 3){$lib[$ru] = $ru;}else{$lib[$ru] = $ua;}}
-   $lang_key = $language_id;$dir = '';if($language_id == 2){$dir = 'en';}
-    //Пример
-    //<?php echo $lib['Украинская фраза']; ? >
-
-?>
+<?php echo $header; ?>
 
 <main class="site-content product-page" id="content">
   <div class="container">
@@ -58,7 +41,7 @@
             </ul>
           <?php
             if ($count_images > 3) {
-              echo '<div class="show-all-thumbnails js-show-all-thumbnails">'.$lib['ще'].' '.($count_images-2).'</div>';
+              echo '<div class="show-all-thumbnails js-show-all-thumbnails">Еще '.($count_images-2).'</div>';
             }
             ?>
           </div>
@@ -86,16 +69,7 @@
           <div class="col product-detail_col-right">
             <div class="model">Артикул: <?php echo $model; ?></div>
             <!--button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button-->
-
-            <?php $svg_favorite_heart_class = ''; ?>
-            <?php if($wishlist){ ?>
-            <!-- товарв в списке -->
-              $svg_favorite_heart_class = 'is-active';
-            <?php  } ?>
-            
-            <button type="button" data-toggle="tooltip" class="btn-wishlist" title=""
-                    onclick="wishlist.add('<?php echo $product_id; ?>');" data-original-title="<?php echo $lib['В закладки']; ?>">
-                    <svg class="svg-favorite-heart <?php echo $svg_favorite_heart_class; ?>"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#favorite-heart"></use></svg></button>
+            <button type="button" data-toggle="tooltip" class="btn-wishlist" title="" onclick="wishlist.add('<?php echo $product_id; ?>');" data-original-title="В закладки"><svg class="svg-favorite-heart <?php if($wishlist){echo 'is-active';} ?>"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#favorite-heart"></use></svg></button>
           </div>
         </div>
 
@@ -109,8 +83,7 @@
           <?php if ($option['type'] == 'radio') { ?>
             <?php
             if ( $option['option_id'] == 11 ) { // если это опция размера
-              // $product_options_class = 'product-options_size';
-              $product_options_class = '';
+              $product_options_class = 'product-options_size';
             }
             if ( $option['option_id'] == 5 ) { // если это опция цвета
               $product_options_class = 'product-options_color';
@@ -249,7 +222,7 @@
         <!--button type="button" id="button-cart" data-loading-text="Загрузка..." class="btn btn_white btn-buy">придбати в 1-клік</button-->
 
         <div class="check-availability">
-          <a href="#"><?php echo $lib['Відкрити таблицю розмірів']; ?></a>
+          <a href="#">Перевірити наявність товару в магазині</a>
         </div>
 
         <div class="social-btn-wrap">
@@ -283,7 +256,7 @@
             <p><?php echo $attribute_group['name']; ?>: <?php echo implode(', ', $attr_text); ?></p>
           <?php } ?>
             <br>
-            <p><a href="#" style="text-decoration: underline;"><?php echo $lib['Переглянути таблицю розмірів']; ?></a></p>
+            <p><a href="#" style="text-decoration: underline;">Переглянути таблицю розмірів</a></p>
         </div>
         <?php } ?>
       </div>
@@ -310,9 +283,7 @@
               <li><a href="#">xl</a></li>
             </ul>
             <div class="favorite">
-              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>"
-              onclick="wishlist.add('<?php echo $product['product_id']; ?>');" class="btn-wishlist"><svg class="svg-heart">
-              <use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
+              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');" class="btn-wishlist"><svg class="svg-heart"><use xlink:href="catalog/view/theme/default/img/sprite/svgSprite.svg#heart"></use></svg></button>
             </div>
           </div>
           <div class="title"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
